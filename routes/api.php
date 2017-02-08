@@ -11,7 +11,7 @@
 |
 */
 
-Route::group([], function() {
+Route::group([], function () {
     Route::get('/facebook_scammers', 'FacebookScammersController@index');
     Route::get('/facebook_scammers/{facebookScammer}', 'FacebookScammersController@show');
 });

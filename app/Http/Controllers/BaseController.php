@@ -30,6 +30,7 @@ abstract class BaseController extends Controller
      * @var int The pagination size
      */
     protected $minLimit = 1;
+
     /**
      * Getter for the pagination.
      *
@@ -39,6 +40,7 @@ abstract class BaseController extends Controller
     {
         return $this->pagination;
     }
+
     /**
      * Sets and checks the pagination.
      *
@@ -48,6 +50,7 @@ abstract class BaseController extends Controller
     {
         $this->pagination = (int) $this->checkPagination($pagination);
     }
+
     /**
      * Checks the pagination.
      *
@@ -58,7 +61,7 @@ abstract class BaseController extends Controller
     private function checkPagination($pagination)
     {
         // Pagination should be numeric
-        if ( ! is_numeric($pagination)) {
+        if (!is_numeric($pagination)) {
             return $this->pagination;
         }
         // Pagination should not be less than the minimum limitation
@@ -70,7 +73,7 @@ abstract class BaseController extends Controller
             return $this->maxLimit;
         }
         // If the pagination is between the min limit and the max limit, return the pagination
-        if ( ! ( $pagination > $this->maxLimit ) && ! ( $pagination < $this->minLimit )) {
+        if (!($pagination > $this->maxLimit) && !($pagination < $this->minLimit)) {
             return $pagination;
         }
         // If all fails, return the default pagination

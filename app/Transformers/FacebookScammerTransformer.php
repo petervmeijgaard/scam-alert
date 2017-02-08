@@ -13,8 +13,8 @@ class FacebookScammerTransformer extends Transformer
     {
         return [
             'facebook_id' => (int) $facebookScammer->facebook_id,
-            'first_name' => $facebookScammer->first_name,
-            'last_name' => $facebookScammer->last_name,
+            'first_name'  => $facebookScammer->first_name,
+            'last_name'   => $facebookScammer->last_name,
         ];
     }
 }

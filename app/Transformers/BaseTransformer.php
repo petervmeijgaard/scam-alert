@@ -27,5 +27,5 @@ abstract class BaseTransformer
      *
      * @return array The transformed item.
      */
-    public abstract function transform($item) : array;
+    abstract public function transform($item) : array;
 }
