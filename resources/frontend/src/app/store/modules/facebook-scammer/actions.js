@@ -14,13 +14,13 @@ const proxy = new Proxy();
 
 const all = ({ commit }) => {
   proxy.all()
-    .then(({ data, pagination }) => {
-      const allData = {
-        facebookScammers: Transformer.fetchCollection(data),
-        pagination: PaginationTransformer.fetch(pagination),
+    .then((response) => {
+      const data = {
+        facebookScammers: Transformer.fetchCollection(response.data),
+        pagination: PaginationTransformer.fetch(response.pagination),
       };
 
-      commit(types.ALL, allData);
+      commit(types.ALL, data);
     });
 };
 

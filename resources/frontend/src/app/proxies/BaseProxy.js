@@ -5,8 +5,8 @@ class BaseProxy {
     this.endpoint = endpoint;
   }
 
-  onFail(data) {
-    alert('Oops, something went wrong: ', data);
+  onFail() {
+    //
   }
 
   submit(requestType, url) {
