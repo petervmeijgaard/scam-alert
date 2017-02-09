@@ -12,6 +12,7 @@ class FacebookScammerTransformer extends Transformer
     public function transform($facebookScammer) : array
     {
         return [
+            'id'          => (int) $facebookScammer->id,
             'facebook_id' => (int) $facebookScammer->facebook_id,
             'first_name'  => $facebookScammer->first_name,
             'last_name'   => $facebookScammer->last_name,
