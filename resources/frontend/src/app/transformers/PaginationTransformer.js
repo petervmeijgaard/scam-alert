@@ -1,3 +1,10 @@
+/* ============
+ * Pagination Transformer
+ * ============
+ *
+ * The transformer for the pagination.
+ */
+
 import Transformer from './BaseTransformer';
 import Pagination from './../models/Pagination';
 

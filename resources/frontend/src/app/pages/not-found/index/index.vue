@@ -4,6 +4,12 @@
   </div>
 </template>
 <script>
+ /* ============
+  * The Not Found Index page
+  * ============
+  *
+  * The not found index page.
+  */
   export default {
 
   };

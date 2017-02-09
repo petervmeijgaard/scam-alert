@@ -1,3 +1,10 @@
+/* ============
+ * Facebook Scammer Model
+ * ============
+ *
+ * The model for a Facebook scammer.
+ */
+
 import Model from './BaseModel';
 
 class FacebookScammer extends Model {
