@@ -39,6 +39,22 @@ Vue.$http = Axios;
 
 
 /* ============
+ * Laravel Echo
+ * ============
+ *
+ * Require laravel-echo
+ */
+import Echo from 'laravel-echo';
+
+Vue.echo = new Echo({
+  broadcaster: 'pusher',
+  key: process.env.PUSHER_KEY,
+  cluster: process.env.PUSHER_CLUSTER,
+  authEndpoint: process.env.BROADCAST_ENDPOINT,
+});
+
+
+/* ============
  * Vuex Router Sync
  * ============
  *

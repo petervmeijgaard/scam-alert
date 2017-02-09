@@ -12,6 +12,7 @@
    */
   import store from './store';
   import { router } from './../bootstrap';
+  import Vue from 'vue';
 
   export default {
     /**
@@ -31,6 +32,17 @@
 
     mounted() {
       store.dispatch('facebookScammer/all');
+
+      Vue.echo.channel('facebook_scammer')
+        .listen('FacebookScammer.Created', () => {
+          alert('created');
+        })
+        .listen('FacebookScammer.Updated', () => {
+          alert('updated');
+        })
+        .listen('FacebookScammer.Deleted', () => {
+          alert('deleted');
+        });
     },
   };
 
