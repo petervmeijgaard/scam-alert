@@ -33,17 +33,20 @@ export default {
    * @param {array} scammer The scammer that has been created.
    */
   [CREATED](state, scammer) {
-    const length = state.all.length;
+    const {
+      totalCount,
+      limit,
+    } = state.pagination;
 
-    if (state.pagination.totalCount % state.pagination.limit === 0) {
+    state.pagination.totalCount += 1;
+
+    if (totalCount % limit === 0) {
       state.pagination.totalPages += 1;
     }
 
-    if (state.pagination.limit > length) {
+    if (limit > state.all.length) {
       state.all.push(scammer);
     }
-
-    state.pagination.totalCount += 1;
   },
 
   /**
@@ -68,20 +71,22 @@ export default {
    * @param {Object} state The current state of the store.
    */
   [DELETED](state) {
-    let nextPage = state.pagination.currentPage;
-    const lastPage =
-      state.pagination.totalPages === state.pagination.currentPage
-      && state.pagination.currentPage !== 1;
+    const {
+      currentPage,
+      totalCount,
+      limit,
+      totalPages,
+    } = state.pagination;
 
-    const shouldSwitch = state.pagination.totalCount % state.pagination.limit === 1;
+    let page = currentPage;
 
-    if (lastPage && shouldSwitch) {
-      nextPage = state.pagination.currentPage - 1;
+    if (totalPages === currentPage && currentPage !== 1 && totalCount % limit === 1) {
+      page = currentPage - 1;
     }
 
     store.dispatch('scammer/all', {
       limit: state.pagination.limit,
-      page: nextPage,
+      page,
     });
   },
 };
