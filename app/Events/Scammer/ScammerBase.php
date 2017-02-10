@@ -9,14 +9,13 @@ use Illuminate\Broadcasting\Channel;
 
 abstract class ScammerBase extends Event
 {
-
     /**
      * @var Scammer The scammer that has been updated.
      */
     public $scammer;
 
     /**
-     * @var ScammerTransformer $transformer The transformer used to transform the scammer.
+     * @var ScammerTransformer The transformer used to transform the scammer.
      */
     protected $transformer;
 
