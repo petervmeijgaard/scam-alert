@@ -3,24 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\BaseController as Controller;
-use App\Models\FacebookScammer;
-use App\Transformers\FacebookScammerTransformer;
+use App\Models\Scammer;
+use App\Transformers\ScammerTransformer;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Input;
 
-class FacebookScammersController extends Controller
+class ScammersController extends Controller
 {
     /**
-     * @var FacebookScammerTransformer The transformer used to transform the model.
+     * @var ScammerTransformer The transformer used to transform the model.
      */
     protected $transformer;
 
     /**
      * The constructor for the controller.
      *
-     * @param FacebookScammerTransformer $transformer The transformer used to transform the model.
+     * @param ScammerTransformer $transformer The transformer used to transform the model.
      */
-    public function __construct(FacebookScammerTransformer $transformer)
+    public function __construct(ScammerTransformer $transformer)
     {
         $this->transformer = $transformer;
     }
@@ -36,23 +36,23 @@ class FacebookScammersController extends Controller
             $this->setPagination(Input::get('limit'));
         }
 
-        $pagination = FacebookScammer::paginate($this->getPagination());
-        $facebookScammers = $this->transformer->transformCollection(collect($pagination->items()));
+        $pagination = Scammer::paginate($this->getPagination());
+        $scammers = $this->transformer->transformCollection(collect($pagination->items()));
 
         return $this->respondWithPagination($pagination, [
-            'data' => $facebookScammers,
+            'data' => $scammers,
         ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param FacebookScammer $facebookScammer The Facebook scammer.
+     * @param Scammer $scammer The scammer.
      *
      * @return JsonResponse The result in a JSON-response.
      */
-    public function show(FacebookScammer $facebookScammer) : JsonResponse
+    public function show(Scammer $scammer) : JsonResponse
     {
-        return $this->respond($this->transformer->transform($facebookScammer));
+        return $this->respond($this->transformer->transform($scammer));
     }
 }

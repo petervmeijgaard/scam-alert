@@ -9,10 +9,10 @@ export default {
   computed: {
     limit: {
       get() {
-        return this.$store.state.facebookScammer.pagination.limit;
+        return this.$store.state.scammer.pagination.limit;
       },
       set(value) {
-        this.$store.dispatch('facebookScammer/all', {
+        this.$store.dispatch('scammer/all', {
           limit: value,
         });
       },
@@ -24,7 +24,7 @@ export default {
      * @returns {boolean} If the previous page is disabled
      */
     previousDisabled() {
-      return this.$store.state.facebookScammer.pagination.currentPage <= 1;
+      return this.$store.state.scammer.pagination.currentPage <= 1;
     },
 
     /**
@@ -34,8 +34,8 @@ export default {
      * @returns {boolean} If the next page is disabled
      */
     nextDisabled() {
-      const currentPage = this.$store.state.facebookScammer.pagination.currentPage;
-      const total = this.$store.state.facebookScammer.pagination.totalPages;
+      const currentPage = this.$store.state.scammer.pagination.currentPage;
+      const total = this.$store.state.scammer.pagination.totalPages;
 
       return currentPage >= total;
     },
@@ -49,11 +49,11 @@ export default {
      */
     goToPage(page) {
       const parameters = {
-        limit: this.$store.state.facebookScammer.pagination.limit,
+        limit: this.$store.state.scammer.pagination.limit,
         page,
       };
 
-      this.$store.dispatch('facebookScammer/all', parameters);
+      this.$store.dispatch('scammer/all', parameters);
     },
 
     /**
@@ -61,7 +61,7 @@ export default {
      */
     previousPage() {
       if (!this.previousDisabled) {
-        this.goToPage(this.$store.state.facebookScammer.pagination.currentPage - 1);
+        this.goToPage(this.$store.state.scammer.pagination.currentPage - 1);
       }
     },
 
@@ -70,7 +70,7 @@ export default {
      */
     nextPage() {
       if (!this.nextDisabled) {
-        this.goToPage(this.$store.state.facebookScammer.pagination.currentPage + 1);
+        this.goToPage(this.$store.state.scammer.pagination.currentPage + 1);
       }
     },
   },

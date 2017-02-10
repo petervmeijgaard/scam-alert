@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFacebookScammersTable extends Migration
+class CreateScammersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class CreateFacebookScammersTable extends Migration
      */
     public function up()
     {
-        Schema::create('facebook_scammers', function (Blueprint $table) {
+        Schema::create('scammers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('facebook_id')->nullable();
             $table->string('first_name');
             $table->string('last_name')->nullable();
             $table->timestamps();
@@ -30,6 +29,6 @@ class CreateFacebookScammersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('facebook_scammers');
+        Schema::dropIfExists('scammers');
     }
 }

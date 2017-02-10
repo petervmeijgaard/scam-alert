@@ -1,6 +1,6 @@
 <div>
   <ul>
-    <li v-for="scammer in $store.state.facebookScammer.all ">
+    <li v-for="scammer in $store.state.scammer.all ">
       {{scammer.getFullName()}}
     </li>
   </ul>
@@ -11,5 +11,5 @@
     <option>10</option>
     <option>15</option>
   </select>
-  <pre>{{$store.state.facebookScammer.pagination}}</pre>
+  <pre>{{$store.state.scammer.pagination}}</pre>
 </div>

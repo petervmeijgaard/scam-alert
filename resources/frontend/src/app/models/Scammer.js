@@ -1,13 +1,13 @@
 /* ============
- * Facebook Scammer Model
+ * Scammer Model
  * ============
  *
- * The model for a Facebook scammer.
+ * The model for a scammer.
  */
 
 import Model from './BaseModel';
 
-class FacebookScammer extends Model {
+class Scammer extends Model {
   /**
    * Getter for the full name.
    *
@@ -18,4 +18,4 @@ class FacebookScammer extends Model {
   }
 }
 
-export default FacebookScammer;
+export default Scammer;

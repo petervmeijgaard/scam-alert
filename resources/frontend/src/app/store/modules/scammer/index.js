@@ -1,5 +1,5 @@
 /* ============
- * Facebook Scammer Module
+ * Scammer Module
  * ============
  */
 

@@ -1,9 +1,9 @@
 <?php
 
-use App\Models\FacebookScammer;
+use App\Models\Scammer;
 use Illuminate\Database\Seeder;
 
-class FacebookScammersTableSeeder extends Seeder
+class ScammersTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +12,6 @@ class FacebookScammersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(FacebookScammer::class, 10)->create();
+        factory(Scammer::class, 10)->create();
     }
 }

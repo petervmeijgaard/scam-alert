@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Events\FacebookScammer;
+namespace App\Events\Scammer;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class Created extends FacebookScammerBase implements ShouldBroadcast
+class Updated extends ScammerBase implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 }

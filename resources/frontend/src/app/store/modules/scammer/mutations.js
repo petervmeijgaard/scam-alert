@@ -3,8 +3,8 @@ import {
 } from './mutation-types';
 
 export default {
-  [ALL](state, { facebookScammers, pagination }) {
-    state.all = facebookScammers;
+  [ALL](state, { scammers, pagination }) {
+    state.all = scammers;
     state.pagination = pagination;
   },
 };

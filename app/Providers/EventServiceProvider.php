@@ -13,9 +13,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\FacebookScammer\Created' => [],
-        'App\Events\FacebookScammer\Updated' => [],
-        'App\Events\FacebookScammer\Deleted' => [],
+        'App\Events\Scammer\Created' => [],
+        'App\Events\Scammer\Updated' => [],
+        'App\Events\Scammer\Deleted' => [],
     ];
 
     /**

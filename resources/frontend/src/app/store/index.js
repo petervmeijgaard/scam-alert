@@ -12,7 +12,7 @@ import Vuex from 'vuex';
 import createLogger from 'vuex/dist/logger';
 
 // Modules
-import facebookScammer from './modules/facebook-scammer';
+import scammer from './modules/scammer';
 
 Vue.use(Vuex);
 
@@ -23,7 +23,7 @@ export default new Vuex.Store({
    * Assign the modules to the store
    */
   modules: {
-    facebookScammer,
+    scammer,
   },
 
   /**
