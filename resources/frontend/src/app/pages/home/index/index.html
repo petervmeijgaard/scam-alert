@@ -4,12 +4,4 @@
       {{scammer.getFullName()}}
     </li>
   </ul>
-  <button @click="previousPage" :disabled="previousDisabled">Previous page</button>
-  <button @click="nextPage" :disabled="nextDisabled">Next page</button>
-  <select v-model="limit">
-    <option>5</option>
-    <option>10</option>
-    <option>15</option>
-  </select>
-  <pre>{{$store.state.scammer.pagination}}</pre>
 </div>
