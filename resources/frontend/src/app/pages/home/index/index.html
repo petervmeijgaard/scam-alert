@@ -1,6 +1,15 @@
 <div>
-  Hello World!
-  <div v-for="scammer in $store.state.facebookScammer.all">
-    {{scammer.getFullName()}}
-  </div>
+  <ul>
+    <li v-for="scammer in $store.state.facebookScammer.all ">
+      {{scammer.getFullName()}}
+    </li>
+  </ul>
+  <button @click="previousPage" :disabled="previousDisabled">Previous page</button>
+  <button @click="nextPage" :disabled="nextDisabled">Next page</button>
+  <select v-model="limit">
+    <option>5</option>
+    <option>10</option>
+    <option>15</option>
+  </select>
+  <pre>{{$store.state.facebookScammer.pagination}}</pre>
 </div>

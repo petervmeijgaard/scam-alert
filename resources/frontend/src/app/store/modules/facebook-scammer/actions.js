@@ -12,8 +12,8 @@ import PaginationTransformer from './../../../transformers/PaginationTransformer
 
 const proxy = new Proxy();
 
-const all = ({ commit }) => {
-  proxy.all()
+const all = ({ commit }, parameters = {}) => {
+  proxy.all(parameters)
     .then((response) => {
       const data = {
         facebookScammers: Transformer.fetchCollection(response.data),

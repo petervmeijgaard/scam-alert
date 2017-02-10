@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+  <router-view/>
 </template>
 <script>
   /* ============
@@ -34,16 +32,11 @@
       store.dispatch('facebookScammer/all');
 
       Vue.echo.channel('facebook_scammer')
-        .listen('FacebookScammer.Created', () => {
-          alert('created');
-        })
-        .listen('FacebookScammer.Updated', () => {
-          alert('updated');
-        })
-        .listen('FacebookScammer.Deleted', () => {
-          alert('deleted');
-        });
+        .listen('FacebookScammer.Created', scammer => console.log('created', scammer))
+        .listen('FacebookScammer.Updated', scammer => console.log('updated', scammer))
+        .listen('FacebookScammer.Deleted', scammer => console.log('deleted', scammer));
     },
   };
+
 
 </script>
