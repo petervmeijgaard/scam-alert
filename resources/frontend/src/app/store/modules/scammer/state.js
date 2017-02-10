@@ -1,3 +1,10 @@
+/* ============
+ * Scammer State
+ * ============
+ *
+ * The state of the scammer module.
+ */
+
 export default {
   all: [],
   pagination: {
