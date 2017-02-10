@@ -9,14 +9,13 @@ use Illuminate\Broadcasting\Channel;
 
 abstract class FacebookScammerBase extends Event
 {
-
     /**
      * @var FacebookScammer The Facebook scammer that has been updated.
      */
     public $facebookScammer;
 
     /**
-     * @var FacebookScammerTransformer $transformer The transformer used to transform the Facebook scammer.
+     * @var FacebookScammerTransformer The transformer used to transform the Facebook scammer.
      */
     protected $transformer;
 
