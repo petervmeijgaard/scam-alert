@@ -31,10 +31,6 @@ class BaseProxy {
     });
   }
 
-  get(endpoint) {
-    return this.submit('get', endpoint);
-  }
-
   /**
    * Method used to fetch a single item from the API.
    *
@@ -46,7 +42,7 @@ class BaseProxy {
   find(id, parameters = {}) {
     const query = this.getParameterString(parameters);
 
-    return this.get(`/${this.endpoint}/${id}${query}`);
+    return this.submit('get', `/${this.endpoint}/${id}${query}`);
   }
 
   /**
@@ -59,7 +55,7 @@ class BaseProxy {
   all(parameters = {}) {
     const query = this.getParameterString(parameters);
 
-    return this.get(`/${this.endpoint}${query}`);
+    return this.submit('get', `/${this.endpoint}${query}`);
   }
 
   /**
