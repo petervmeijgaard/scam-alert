@@ -42,7 +42,10 @@ Vue.$http = Axios;
  * Laravel Echo
  * ============
  *
- * Require laravel-echo
+ * Laravel Echo is a JavaScript library that makes it painless to subscribe
+ * to channels and listen for events broadcast by Laravel.
+ *
+ * https://github.com/laravel/echo
  */
 import Echo from 'laravel-echo';
 
