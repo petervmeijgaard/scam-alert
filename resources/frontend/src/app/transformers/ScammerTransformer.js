@@ -27,7 +27,7 @@ class ScammerTransformer extends Transformer {
   /**
    * Method used to transform a send scammer.
    *
-   * @param {Scammer} scammer The scammer to be send
+   * @param {Scammer} scammer The scammer to be send.
    *
    * @returns {Object} The transformed scammer.
    */
