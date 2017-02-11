@@ -9,6 +9,7 @@
         "algolia/algoliasearch-client-php": "^1.14",
         "barryvdh/laravel-cors": "^0.8.5",
         "barryvdh/laravel-ide-helper": "^2.2",
+        "doctrine/dbal": "^2.5",
         "laravel/framework": "5.4.*",
         "laravel/homestead": "^4.0",
         "laravel/passport": "^2.0",
