@@ -17,6 +17,14 @@ export default [
     name: 'home.index',
     component: require('./pages/home/index/index.vue'),
   },
+
+  // Scammers
+  {
+    path: '/scammers/:id',
+    name: 'scammers.show',
+    component: require('./pages/scammers/show/show.vue'),
+  },
+
   // 404
   {
     path: '/404',

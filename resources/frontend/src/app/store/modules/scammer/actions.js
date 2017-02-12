@@ -13,7 +13,7 @@ import PaginationTransformer from './../../../transformers/PaginationTransformer
 const proxy = new Proxy();
 
 /**
- * Action fired when all users will be fetched.
+ * Action fired when all scammers will be fetched.
  *
  * @param {function} commit     Commit function to update the store.
  * @param {Object}   parameters Query parameters used for the AJAX-request.
