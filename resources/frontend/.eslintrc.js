@@ -30,6 +30,7 @@ module.exports = {
 
     'import/first': 0,
     'import/no-unresolved': 0,
+    'import/no-dynamic-require': 0,
     'class-methods-use-this': 0,
 
     // don't require .vue extension when importing

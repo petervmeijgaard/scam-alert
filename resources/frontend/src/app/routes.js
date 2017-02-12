@@ -15,21 +15,22 @@ export default [
   {
     path: '/home',
     name: 'home.index',
-    component: require('./pages/home/index/index.vue'),
+    component: resolve => require(['./pages/home/index/index.vue'], resolve),
   },
 
   // Scammers
   {
-    path: '/scammers/:id',
+    path: '/scammers/:scammerId',
     name: 'scammers.show',
-    component: require('./pages/scammers/show/show.vue'),
+    component: resolve => require(['./pages/scammers/show/show.vue'], resolve),
+    props: true,
   },
 
   // 404
   {
     path: '/404',
     name: 'not-found.index',
-    component: require('./pages/not-found/index/index.vue'),
+    component: resolve => require(['./pages/not-found/index/index.vue'], resolve),
   },
 
   // Redirects

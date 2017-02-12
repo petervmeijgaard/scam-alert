@@ -1,8 +1,8 @@
 <div>
   <ul>
-    <li v-for="scammer in $store.state.scammer.all ">
+    <li v-for="scammer in scammers">
       {{scammer.getFullName()}}
     </li>
   </ul>
-  <pre>{{$store.state.scammer.pagination}}</pre>
+  <pre>{{pagination}}</pre>
 </div>

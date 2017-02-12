@@ -5,4 +5,13 @@
  * The home index page.
  */
 
-export default {};
+import { mapState } from 'vuex';
+
+export default {
+  computed: {
+    ...mapState('scammer', {
+      scammers: state => state.all,
+      pagination: state => state.pagination,
+    }),
+  },
+};

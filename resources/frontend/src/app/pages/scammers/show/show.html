@@ -1,3 +1,5 @@
 <div>
-  <pre>{{scammer.getFullName()}}</pre>
+  <div v-if="scammer">
+    {{ scammer.getFullName() }}
+  </div>
 </div>
