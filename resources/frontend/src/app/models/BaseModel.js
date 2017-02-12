@@ -2,7 +2,7 @@
  * Base Model
  * ============
  *
- * The base for the rest of themodels.
+ * The base for the rest of the models.
  */
 
 class BaseModel {

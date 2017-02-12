@@ -18,7 +18,7 @@ export default {
    * Mutation to update the store with the fetched scammers.
    *
    * @param {Object} state      The current state of the store.
-   * @param {array}  scammers   The fetched scammers.
+   * @param {Array}  scammers   The fetched scammers.
    * @param {Object} pagination The fetched pagination.
    */
   [ALL](state, { scammers, pagination }) {
@@ -30,7 +30,7 @@ export default {
    * Mutation to respond to the action when a scammer has been created.
    *
    * @param {Object} state   The current state of the store.
-   * @param {array}  scammer The scammer that has been created.
+   * @param {Object}  scammer The scammer that has been created.
    */
   [CREATED](state, scammer) {
     const {
@@ -53,7 +53,7 @@ export default {
    * Mutation to respond to the action when a scammer has been updated.
    *
    * @param {Object} state   The current state of the store.
-   * @param {array}  scammer The scammer that has been updated.
+   * @param {Object}  scammer The scammer that has been updated.
    */
   [UPDATED](state, scammer) {
     state.all = state.all.map((item) => {
@@ -81,7 +81,7 @@ export default {
     let page = currentPage;
 
     if (totalPages === currentPage && currentPage !== 1 && totalCount % limit === 1) {
-      page = currentPage - 1;
+      page -= 1;
     }
 
     store.dispatch('scammer/all', {
