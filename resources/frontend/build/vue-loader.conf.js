@@ -3,6 +3,9 @@ var config = require('../config')
 var isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = {
+  cssModules: {
+    camelCase: true
+  },
   loaders: utils.cssLoaders({
     sourceMap: isProduction
       ? config.build.productionSourceMap
