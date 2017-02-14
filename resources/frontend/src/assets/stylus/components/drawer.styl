@@ -1,0 +1,16 @@
+.drawer
+  transition: left .25s ease-in-out
+  top: 0
+  position: absolute
+  width: 17.5rem
+  height: 100%
+  background-color: palette('White')
+  left: -17.5rem
+  +variant('active')
+    left: 0
+  +has('header')
+    height: 4rem
+  +has('body')
+    height: calc(100% - 6rem)
+  +has('footer')
+    height: 2rem

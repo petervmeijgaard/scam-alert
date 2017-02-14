@@ -7,6 +7,7 @@
 
 import Proxy from './../../../proxies/ScammerProxy';
 import Transformer from './../../../transformers/ScammerTransformer';
+import * as VLayout from './../../../layouts/base/base.vue';
 
 const proxy = new Proxy();
 
@@ -35,6 +36,10 @@ export default {
     scammerId() {
       this.fetchScammer(this.scammerId);
     },
+  },
+
+  components: {
+    VLayout,
   },
 
   mounted() {
