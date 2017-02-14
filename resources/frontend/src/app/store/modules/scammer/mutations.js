@@ -30,7 +30,7 @@ export default {
    * Mutation to respond to the action when a scammer has been created.
    *
    * @param {Object} state   The current state of the store.
-   * @param {Object}  scammer The scammer that has been created.
+   * @param {Object} scammer The scammer that has been created.
    */
   [CREATED](state, scammer) {
     const {

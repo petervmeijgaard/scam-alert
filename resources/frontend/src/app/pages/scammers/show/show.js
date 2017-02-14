@@ -16,7 +16,7 @@ export default {
      * The scammer identifier being used.
      */
     scammerId: {
-      type: String,
+      type: [String, Number],
       required: true,
     },
   },

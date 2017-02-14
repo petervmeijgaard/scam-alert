@@ -20,6 +20,12 @@ export default [
 
   // Scammers
   {
+    path: '/scammers',
+    name: 'scammers.index',
+    component: resolve => require(['./pages/scammers/index/index.vue'], resolve),
+  },
+
+  {
     path: '/scammers/:scammerId',
     name: 'scammers.show',
     component: resolve => require(['./pages/scammers/show/show.vue'], resolve),

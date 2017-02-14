@@ -37,6 +37,4 @@
         .listen('Scammer.Deleted', scammer => store.dispatch('scammer/deleted', scammer));
     },
   };
-
-
 </script>
