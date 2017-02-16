@@ -1,6 +1,9 @@
 import ComponentMixin from './component';
 
 export default {
+  /**
+   * The mixins used to expand the component.
+   */
   mixins: [
     ComponentMixin,
   ],
@@ -15,14 +18,9 @@ export default {
     variants: {
       type: Array,
       required: false,
-    },
-
-    /**
-     * The CSS class of the component.
-     */
-    class: {
-      type: String,
-      required: false,
+      default() {
+        return [];
+      },
     },
   },
 
@@ -35,36 +33,11 @@ export default {
      * @returns {string} The class name used as the CSS module.
      */
     getClass(className) {
+      if (!this.$style[className]) {
+        return '';
+      }
+
       return this.$style[className];
-    },
-
-    /**
-     * Method used to get the element class name for the CSS module.
-     *
-     * @param {string} element The name of the elemen.
-     *
-     * @returns {string} The module class name.
-     */
-    elementClass(element) {
-      return this.getClass(`${this.$options.name}__${element}`);
-    },
-
-    elementVariantClass(element, variants = []) {
-      const classNames = [];
-
-      classNames.push(this.elementClass(element));
-
-      variants.forEach((variant) => {
-        classNames.push(this.getClass(`${this.$options.name}__${element}--${variant}`));
-      });
-
-      return classNames;
-    },
-  },
-
-  computed: {
-    blockClass() {
-      return this.getClass(this.$options.name);
     },
   },
 };

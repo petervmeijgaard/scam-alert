@@ -1,12 +1,20 @@
 <div>
   <header>
-    <v-toolbar></v-toolbar>
-    <v-drawer></v-drawer>
+    <v-toolbar />
+    <v-drawer
+      :is-active="application.drawerActive"
+    />
   </header>
   <div class="content">
-    <slot></slot>
+    <slot />
   </div>
   <footer>
     footer
   </footer>
+  <transition name="fade">
+    <div class="overlay"
+         v-show="application.drawerActive"
+         @click="$bus.$emit('application@hideDrawer')"
+    ></div>
+  </transition>
 </div>

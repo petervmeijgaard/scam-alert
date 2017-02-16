@@ -13,6 +13,7 @@ import createLogger from 'vuex/dist/logger';
 
 // Modules
 import scammer from './modules/scammer';
+import application from './modules/application';
 
 Vue.use(Vuex);
 
@@ -24,6 +25,7 @@ export default new Vuex.Store({
    */
   modules: {
     scammer,
+    application,
   },
 
   /**

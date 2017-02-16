@@ -1,5 +1,5 @@
 <template>
-  <router-view/>
+  <router-view />
 </template>
 <script>
   /* ============
@@ -10,7 +10,6 @@
    */
   import store from './store';
   import { router } from './../bootstrap';
-  import Vue from 'vue';
 
   export default {
     /**
@@ -31,10 +30,18 @@
     mounted() {
       store.dispatch('scammer/all');
 
-      Vue.echo.channel('scammer')
-        .listen('Scammer.Created', scammer => store.dispatch('scammer/created', scammer))
-        .listen('Scammer.Updated', scammer => store.dispatch('scammer/updated', scammer))
-        .listen('Scammer.Deleted', scammer => store.dispatch('scammer/deleted', scammer));
+      this.$echo
+        .channel('scammer')
+        .listen('Scammer.Created', scammer => this.$bus.$emit('scammer@created', scammer))
+        .listen('Scammer.Updated', scammer => this.$bus.$emit('scammer@updated', scammer))
+        .listen('Scammer.Deleted', scammer => this.$bus.$emit('scammer@deleted', scammer));
+
+      this.$bus.$on('application@toggleDrawer', () => store.dispatch('application/toggleDrawer'));
+      this.$bus.$on('application@showDrawer', () => store.dispatch('application/showDrawer'));
+      this.$bus.$on('application@hideDrawer', () => store.dispatch('application/hideDrawer'));
+      this.$bus.$on('scammer@created', scammer => store.dispatch('scammer/created', scammer));
+      this.$bus.$on('scammer@updated', scammer => store.dispatch('scammer/updated', scammer));
+      this.$bus.$on('scammer@deleted', scammer => store.dispatch('scammer/deleted', scammer));
     },
   };
 </script>

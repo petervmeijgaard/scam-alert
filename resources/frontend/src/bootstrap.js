@@ -19,6 +19,16 @@ import Vue from 'vue';
 
 Vue.config.debug = process.env.NODE_ENV !== 'production';
 
+const bus = new Vue();
+
+// Bind the event bus to Vue.
+Vue.$bus = bus;
+Object.defineProperty(Vue.prototype, '$bus', {
+  get() {
+    return bus;
+  },
+});
+
 
 /* ============
  * Axios
@@ -35,7 +45,13 @@ import Axios from 'axios';
 Axios.defaults.baseURL = process.env.API_LOCATION;
 Axios.defaults.headers.common.Accept = 'application/json';
 
+// Bind Axios to Vue.
 Vue.$http = Axios;
+Object.defineProperty(Vue.prototype, '$http', {
+  get() {
+    return Axios;
+  },
+});
 
 
 /* ============
@@ -49,11 +65,19 @@ Vue.$http = Axios;
  */
 import Echo from 'laravel-echo';
 
-Vue.echo = new Echo({
+const echo = new Echo({
   broadcaster: 'pusher',
   key: process.env.PUSHER_KEY,
   cluster: process.env.PUSHER_CLUSTER,
   authEndpoint: process.env.BROADCAST_ENDPOINT,
+});
+
+// Bind Laravel Echo to Vue.
+Vue.$echo = echo;
+Object.defineProperty(Vue.prototype, '$echo', {
+  get() {
+    return echo;
+  },
 });
 
 

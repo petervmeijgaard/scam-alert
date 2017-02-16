@@ -61,15 +61,11 @@ export default {
    * @returns {Array} The collection of class names.
    */
   getClassNames(item, variants = []) {
-    const classNames = [];
+    const classNames = [item];
 
-    classNames.push(item);
-
-    if (variants.length > 0) {
-      return classNames.concat(this.variants(item, variants));
-    }
-
-    return classNames;
+    return variants.length > 0 ?
+      classNames.concat(this.variants(item, variants)) :
+      classNames;
   },
 
   /**

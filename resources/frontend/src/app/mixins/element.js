@@ -14,6 +14,9 @@ export default {
     StyleMixin,
   ],
 
+  /**
+   * The computed properties.
+   */
   computed: {
     /**
      * Get the block name.
@@ -22,6 +25,11 @@ export default {
       return this.$parent.$options.name;
     },
 
+    /**
+     * Get the CSS module class names.
+     *
+     * @returns {Array} The CSS module class names.
+     */
     classNames() {
       return CSSUtil
         .getElementClasses(this.block, this.$options.element, this.variants)

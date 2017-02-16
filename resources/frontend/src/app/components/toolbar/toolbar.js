@@ -1,7 +1,7 @@
-import * as VMenuIcon from './../menu-icon/menu-icon.vue';
+import * as VNavIcon from '../nav-icon/nav-icon.vue';
 
 export default {
   components: {
-    VMenuIcon,
+    VNavIcon,
   },
 };
