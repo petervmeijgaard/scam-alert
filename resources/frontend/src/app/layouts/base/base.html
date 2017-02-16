@@ -3,9 +3,7 @@
 
     <v-toolbar title="Scam alert" />
 
-    <v-drawer
-      :is-active="application.drawerActive"
-    />
+    <v-drawer :is-active="application.drawerActive" />
 
   </header>
 
@@ -18,10 +16,7 @@
   </footer>
 
   <transition name="fade">
-    <div class="overlay"
-         v-show="application.drawerActive"
-         @click="$bus.$emit('application@hideDrawer')"
-    ></div>
+    <v-overlay v-show="application.drawerActive" />
   </transition>
 
 </div>

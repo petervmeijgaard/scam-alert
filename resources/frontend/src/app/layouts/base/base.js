@@ -1,6 +1,7 @@
 import { mapState } from 'vuex';
 import * as VToolbar from './../../components/toolbar/toolbar.vue';
 import * as VDrawer from './../../components/drawer/drawer.vue';
+import * as VOverlay from './../../components/overlay/overlay.vue';
 import ComponentMixin from './../../mixins/component';
 
 export default {
@@ -28,5 +29,6 @@ export default {
   components: {
     VToolbar,
     VDrawer,
+    VOverlay,
   },
 };
