@@ -1,6 +1,13 @@
-<div class="toolbar">
+<div :class="classNames">
+
   <v-nav-icon />
-  <div class="toolbar__title">
-    Scam Alert
-  </div>
+
+  <v-toolbar-title
+    v-if="hasTitle"
+    :content="getContent('title')"
+    :variants="getVariants('title')"
+  >
+    <slot name="title" />
+  </v-toolbar-title>
+
 </div>

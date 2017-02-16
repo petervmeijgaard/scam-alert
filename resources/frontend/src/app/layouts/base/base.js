@@ -6,11 +6,21 @@ import ComponentMixin from './../../mixins/component';
 export default {
   name: 'base-layout',
 
+  data() {
+    return {
+      title: {
+        content: 'Scam Alert',
+      },
+    };
+  },
+
+
   computed: {
     ...mapState('application', {
       application: state => state,
     }),
   },
+
   mixins: [
     ComponentMixin,
   ],

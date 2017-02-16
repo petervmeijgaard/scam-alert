@@ -2,7 +2,10 @@
   :class="classNames"
   @click="$bus.$emit('application@toggleDrawer')"
 >
-  <v-nav-icon-bar />
-  <v-nav-icon-bar />
-  <v-nav-icon-bar />
+
+  <v-nav-icon-bar
+    v-for="index in 3"
+    :variants="getVariants('bar')"
+  />
+
 </div>

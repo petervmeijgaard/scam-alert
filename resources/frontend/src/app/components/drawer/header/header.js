@@ -5,12 +5,12 @@ export default {
   /**
    * The name of the component.
    */
-  name: 'nav-icon-bar',
+  name: 'drawer-header',
 
   /**
    * The element name of the component.
    */
-  element: 'bar',
+  element: 'header',
 
   /**
    * The mixins used to extend the component.

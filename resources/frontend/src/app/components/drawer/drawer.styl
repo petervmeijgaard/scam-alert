@@ -1,0 +1,14 @@
+@import './../../../assets/stylus/imports.styl'
+
+.drawer
+  background-color: palette('White')
+  height: 100%
+  left: -17.5rem
+  position: absolute
+  top: 0
+  transition: left .25s ease-in-out
+  width: 17.5rem
+  z-index: 999
+  +variant('active')
+    left: 0
+

@@ -1,12 +1,4 @@
-import ComponentMixin from './component';
-
 export default {
-  /**
-   * The mixins used to expand the component.
-   */
-  mixins: [
-    ComponentMixin,
-  ],
 
   /**
    * The properties which the component can use.

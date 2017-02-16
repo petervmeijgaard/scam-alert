@@ -3,14 +3,14 @@ import ElementMixin from './../../../mixins/element';
 
 export default {
   /**
-   * The name of the component.
+   * The name of the component
    */
-  name: 'nav-icon-bar',
+  name: 'drawer-footer',
 
   /**
    * The element name of the component.
    */
-  element: 'bar',
+  element: 'footer',
 
   /**
    * The mixins used to extend the component.

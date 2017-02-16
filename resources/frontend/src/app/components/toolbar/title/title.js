@@ -5,12 +5,12 @@ export default {
   /**
    * The name of the component.
    */
-  name: 'nav-icon-bar',
+  name: 'toolbar-title',
 
   /**
    * The element name of the component.
    */
-  element: 'bar',
+  element: 'title',
 
   /**
    * The mixins used to extend the component.
@@ -19,4 +19,17 @@ export default {
     ComponentMixin,
     ElementMixin,
   ],
+
+  /**
+   * The properties which the component can use.
+   */
+  props: {
+    /**
+     * The title being displayed.
+     */
+    content: {
+      required: false,
+      type: String,
+    },
+  },
 };
