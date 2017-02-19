@@ -1,24 +1,3 @@
-<div>
-  <v-layout>
-    <table>
-      <thead>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="scammer in scammer.all">
-        <td>
-          {{ scammer.id }}
-        </td>
-        <td>
-          <router-link :to="{ name: 'scammers.show', params: { scammerId : scammer.id } }">
-            {{ scammer.getFullName() }}
-          </router-link>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-  </v-layout>
-</div>
+<v-layout>
+  Scammer Index Page
+</v-layout>

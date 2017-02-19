@@ -1,27 +1,20 @@
 <div>
-  <header>
+  <v-header>
 
-    <v-toolbar title="Scam alert" />
+    <v-toolbar title="Scam alert"/>
 
-    <v-drawer :is-active="application.drawerActive" />
+    <v-drawer :is-active="application.drawerActive"/>
 
-  </header>
+  </v-header>
 
-  <div class="content">
-    <v-grid>
-      <v-row>
-        <v-col></v-col>
-      </v-row>
-    </v-grid>
-    <slot />
-  </div>
+  <v-content>
 
-  <footer>
-    footer
-  </footer>
+    <slot></slot>
+
+  </v-content>
 
   <transition name="fade">
-    <v-overlay v-show="application.drawerActive" />
+    <v-overlay v-show="application.drawerActive"/>
   </transition>
 
 </div>

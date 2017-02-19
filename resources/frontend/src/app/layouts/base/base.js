@@ -1,10 +1,9 @@
 import { mapState } from 'vuex';
-import * as VToolbar from './../../components/toolbar/toolbar.vue';
+import * as VContent from './../../components/content/content.vue';
 import * as VDrawer from './../../components/drawer/drawer.vue';
+import * as VHeader from './../../components/header/header.vue';
 import * as VOverlay from './../../components/overlay/overlay.vue';
-import * as VGrid from './../../components/grid/grid.vue';
-import * as VRow from './../../components/row/row.vue';
-import * as VCol from './../../components/col/col.vue';
+import * as VToolbar from './../../components/toolbar/toolbar.vue';
 import ComponentMixin from './../../mixins/component';
 
 export default {
@@ -30,11 +29,10 @@ export default {
   ],
 
   components: {
-    VToolbar,
+    VContent,
     VDrawer,
+    VHeader,
     VOverlay,
-    VGrid,
-    VRow,
-    VCol,
+    VToolbar,
   },
 };
