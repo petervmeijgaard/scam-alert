@@ -50,7 +50,7 @@ export default {
      * @returns {boolean} If the component has a title.
      */
     hasTitle() {
-      return this.title || this.hasSlot('title');
+      return this.has('title');
     },
   },
 };
