@@ -1,5 +1,5 @@
-import ComponentMixin from './../../mixins/component';
 import BlockMixin from './../../mixins/block';
+import ComponentMixin from './../../mixins/component';
 import SlotMixin from './../../mixins/slot';
 
 export default {
@@ -12,8 +12,8 @@ export default {
    * The mixins used to extend the component.
    */
   mixins: [
-    ComponentMixin,
     BlockMixin,
+    ComponentMixin,
     SlotMixin,
   ],
 };

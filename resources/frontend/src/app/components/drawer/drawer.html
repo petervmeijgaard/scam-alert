@@ -1,9 +1,32 @@
 <div :class="classNames">
-
-  <v-drawer-header />
-
-  <v-drawer-body />
-
-  <v-drawer-footer />
-
+  <v-drawer-header
+    v-if="hasHeader"
+    :content="getContent('header')"
+    :variants="getVariants('header')"
+  >
+    <slot name="header">
+      <v-nav-icon :bar="navIcon"/>
+      <v-drawer-title
+        v-if="hasTitle"
+        :content="getContent('title')"
+        :variants="getVariants('title')"
+      >
+        <slot name="title" />
+      </v-drawer-title>
+    </slot>
+  </v-drawer-header>
+  <v-drawer-body
+    v-if="hasBody"
+    :content="getContent('body')"
+    :variants="getVariants('body')"
+  >
+    <slot name="body" />
+  </v-drawer-body>
+  <v-drawer-footer
+    v-if="hasFooter"
+    :content="getContent('footer')"
+    :variants="getVariants('footer')"
+  >
+    <slot name="footer" />
+  </v-drawer-footer>
 </div>

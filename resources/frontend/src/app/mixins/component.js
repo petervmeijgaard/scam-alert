@@ -38,5 +38,16 @@ export default {
 
       return undefined;
     },
+
+    /**
+     * Checks if the component has an item.
+     *
+     * @param {String} item The item.
+     *
+     * @returns {boolean} If the component has the item.
+     */
+    has(item) {
+      return this[item] || this.hasSlot(item);
+    },
   },
 };

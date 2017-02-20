@@ -23,8 +23,8 @@ export default {
      * Whether the overlay is active.
      */
     isActive: {
-      required: false,
       type: Boolean,
+      required: false,
       default() {
         return true;
       },

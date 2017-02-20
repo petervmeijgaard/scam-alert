@@ -110,6 +110,11 @@ Vue.use(VueRouter);
 export const router = new VueRouter({
   routes,
 });
+router.afterEach(() => {
+  setTimeout(() => {
+    bus.$emit('application@hideDrawer');
+  });
+});
 VuexRouterSync.sync(store, router);
 
 Vue.router = router;

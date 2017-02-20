@@ -1,5 +1,6 @@
 import ComponentMixin from './../../../mixins/component';
 import ElementMixin from './../../../mixins/element';
+import SlotMixin from './../../../mixins/slot';
 
 export default {
   /**
@@ -18,5 +19,6 @@ export default {
   mixins: [
     ComponentMixin,
     ElementMixin,
+    SlotMixin,
   ],
 };

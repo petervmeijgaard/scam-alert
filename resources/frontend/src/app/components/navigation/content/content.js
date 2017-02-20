@@ -4,14 +4,14 @@ import SlotMixin from './../../../mixins/slot';
 
 export default {
   /**
-   * The name of the component.
+   * The name of the component
    */
-  name: 'toolbar-title',
+  name: 'navigation-content',
 
   /**
    * The element name of the component.
    */
-  element: 'title',
+  element: 'content',
 
   /**
    * The mixins used to extend the component.

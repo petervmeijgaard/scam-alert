@@ -6,7 +6,7 @@ export default {
   /**
    * The name of the component.
    */
-  name: 'toolbar-title',
+  name: 'drawer-title',
 
   /**
    * The element name of the component.

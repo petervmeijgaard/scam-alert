@@ -27,8 +27,8 @@ export default {
      * The title being displayed.
      */
     title: {
-      required: false,
       type: [Object, String],
+      required: false,
     },
   },
 

@@ -22,7 +22,7 @@ export default {
      * Get the block name.
      */
     block() {
-      return this.$parent.$options.name;
+      return this.$parent.block || this.$parent.$options.name;
     },
 
     /**
