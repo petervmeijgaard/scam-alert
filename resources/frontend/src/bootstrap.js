@@ -2,7 +2,7 @@
  * Bootstrap File
  * ============
  *
- * Will configure and bootstrap the application
+ * Will configure and bootstrap the application.
  */
 
 
