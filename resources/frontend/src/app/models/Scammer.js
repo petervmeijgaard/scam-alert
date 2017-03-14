@@ -13,7 +13,7 @@ class Scammer extends Model {
    *
    * @returns {string} The full name.
    */
-  getFullName() {
+  get fullName() {
     return `${this.firstName} ${this.lastName}`;
   }
 }
