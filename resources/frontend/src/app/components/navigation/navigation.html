@@ -1,5 +1,8 @@
 <ul :class="classNames">
-  <v-navigation-item v-for="route in routes">
+  <v-navigation-item
+    v-for="route in routes"
+    :key="route"
+  >
     <v-navigation-link :route="route.to">
       <v-navigation-content :content="route.content" />
     </v-navigation-link>
