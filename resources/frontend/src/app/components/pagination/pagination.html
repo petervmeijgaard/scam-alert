@@ -1,20 +1,28 @@
 <div :class="classNames">
 
-  <v-pagination-item :switch-function="previousPage">
-    <v-icon @click.prevent="previousPage">navigate_before</v-icon>
+  <v-pagination-item
+    @click="previousPage"
+    :is-enabled="previousEnabled"
+    variant="icon"
+  >
+    <v-icon>navigate_before</v-icon>
   </v-pagination-item>
 
   <v-pagination-item
     v-for="page in pagination.totalPages"
     :key="page"
     :is-active="isActive(page)"
-    :switch-function="goToPage"
+    @click="goToPage(page)"
   >
     {{ page }}
   </v-pagination-item>
 
-  <v-pagination-item :switch-function="nextPage">
-    <v-icon @click.prevent="nextPage">navigate_next</v-icon>
+  <v-pagination-item
+    @click="nextPage"
+    :is-enabled="nextEnabled"
+    variant="icon"
+  >
+    <v-icon>navigate_next</v-icon>
   </v-pagination-item>
 
 </div>

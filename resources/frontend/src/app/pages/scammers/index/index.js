@@ -35,6 +35,16 @@ export default {
     ...mapState('scammer', {
       scammer: state => state,
     }),
+    limit: {
+      get() {
+        return this.scammer.pagination.limit;
+      },
+      set(limit) {
+        this.$store.dispatch('scammer/all', {
+          limit
+        });
+      },
+    },
   },
   components: {
     VGrid,
@@ -45,8 +55,8 @@ export default {
     VPagination,
   },
   methods: {
-    switchFunction() {
-      console.log('test');
+    switchFunction(params) {
+      this.$store.dispatch('scammer/all', params);
     },
   },
 };

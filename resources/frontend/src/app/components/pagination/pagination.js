@@ -45,8 +45,8 @@ export default {
      *
      * @returns {boolean} If the previous page is disabled.
      */
-    previousDisabled() {
-      return this.pagination.currentPage <= 1;
+    previousEnabled() {
+      return this.pagination.currentPage > 1;
     },
 
     /**
@@ -55,26 +55,43 @@ export default {
      *
      * @returns {boolean} If the next page is disabled.
      */
-    nextDisabled() {
-      return this.pagination.currentPage >= this.pagination.totalPages;
+    nextEnabled() {
+      return this.pagination.currentPage < this.pagination.totalPages;
     },
   },
 
+  /**
+   * The methods which the component can use.
+   */
   methods: {
+    /**
+     * Checks which page is the current one.
+     *
+     * @param {Number} page The page number.
+     *
+     * @returns {boolean} If the page is active.
+     */
     isActive(page) {
       return page === this.pagination.currentPage;
     },
 
+    /**
+     * Method used to switch the page
+     *
+     * @param {Number} page The page number.
+     */
     goToPage(page) {
-      console.log(this);
-      this.switchFunction(page);
+      this.switchFunction({
+        page,
+        limit: this.pagination.limit,
+      });
     },
 
     /**
      * Method used to go to the previous page.
      */
     previousPage() {
-      if (!this.previousDisabled) {
+      if (this.previousEnabled) {
         this.goToPage(this.pagination.currentPage - 1);
       }
     },
@@ -83,7 +100,7 @@ export default {
      * Method used to go to the next page.
      */
     nextPage() {
-      if (!this.nextDisabled) {
+      if (this.nextEnabled) {
         this.goToPage(this.pagination.currentPage + 1);
       }
     },

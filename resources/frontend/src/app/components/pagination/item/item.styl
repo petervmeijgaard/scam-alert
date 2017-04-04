@@ -13,6 +13,11 @@
     text-align: center
     text-decoration: none
     vertical-align: middle
-    width: 1.5rem
+    padding: 0 .5rem
     +variant('active')
       color: palette('Green')
+    +variant('disabled')
+      color: palette('Grey', '300')
+      cursor: not-allowed
+    +variant('icon')
+      padding: 0

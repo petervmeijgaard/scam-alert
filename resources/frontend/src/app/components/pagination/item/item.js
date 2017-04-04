@@ -30,11 +30,14 @@ export default {
     },
 
     /**
-     * Function used to switch to a different page.
+     * If the item is enabled.
      */
-    switchFunction: {
-      type: Function,
-      required: true,
+    isEnabled: {
+      type: Boolean,
+      required: false,
+      default() {
+        return true;
+      },
     },
   },
 
@@ -55,7 +58,25 @@ export default {
         classNames.push(CSSUtil.variant(this.getElementClassName, 'active'));
       }
 
+      if (!this.isEnabled) {
+        classNames.push(CSSUtil.variant(this.getElementClassName, 'disabled'));
+      }
+
       return classNames.map(className => this.getClass(className));
+    },
+  },
+
+  /**
+   * The methods which the component can use.
+   */
+  methods: {
+    /**
+     * This method will emit the @click event to the parent.
+     */
+    emitClick () {
+      if (this.isEnabled) {
+        this.$emit('click');
+      }
     },
   },
 
