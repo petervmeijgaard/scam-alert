@@ -1,0 +1,44 @@
+<table :class="classNames">
+
+  <v-table-head>
+    <v-table-row>
+      <v-table-col
+        variant="head"
+        type="head"
+        v-for="heading in headings"
+        :key="heading"
+        :content="heading.title"
+      />
+    </v-table-row>
+  </v-table-head>
+
+  <v-table-body>
+    <v-table-row
+      variant="body"
+      v-for="item in content"
+      :key="item"
+    >
+
+      <v-table-col
+        variant="body"
+        type="body"
+        v-for="heading in headings"
+        :key="heading"
+        :content="item[heading.identifier]"
+      />
+    </v-table-row>
+
+    <v-table-row
+      variant="body"
+      v-if="content.length === 0"
+    >
+      <v-table-col
+        variant="body"
+        type="body"
+        :colspan="headings.length"
+        :content="emptyMessage"
+      />
+    </v-table-row>
+  </v-table-body>
+
+</table>

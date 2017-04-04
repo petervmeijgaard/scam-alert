@@ -1,0 +1,12 @@
+@import './../../../../assets/stylus/imports.styl'
+
+.table
+  +has('col')
+    font-size: 1rem
+    padding: 1rem
+    text-align: left
+    +variant('head')
+      color: palette('Grey', '600')
+    +variant('body')
+      font-weight: 400
+
