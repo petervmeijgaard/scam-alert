@@ -12,7 +12,7 @@ export default {
      *
      * @returns {Array} The variants.
      */
-    getVariants(element) {
+    getVariantsFor(element) {
       if (this[element] && this[element].variants) {
         return this[element].variants;
       }

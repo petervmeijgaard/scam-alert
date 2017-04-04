@@ -4,10 +4,10 @@ export default {
    */
   props: {
     /**
-     * The title being displayed.
+     * The content being displayed.
      */
     content: {
-      type: String,
+      type: [String, Number],
       required: false,
     },
   },

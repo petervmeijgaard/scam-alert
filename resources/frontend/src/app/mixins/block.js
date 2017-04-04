@@ -16,7 +16,7 @@ export default {
      * @returns {Array} The CSS module class names.
      */
     classNames() {
-      return CSSUtil.getBlockClasses(this.$options.name, this.variants)
+      return CSSUtil.getBlockClasses(this.$options.name, this.getVariants)
         .map(className => this.getClass(className));
     },
   },

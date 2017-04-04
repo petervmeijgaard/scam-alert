@@ -2,14 +2,14 @@
   <v-drawer-header
     v-if="hasHeader"
     :content="getContent('header')"
-    :variants="getVariants('header')"
+    :variants="getVariantsFor('header')"
   >
     <slot name="header">
       <v-nav-icon :bar="navIcon"/>
       <v-drawer-title
         v-if="hasTitle"
         :content="getContent('title')"
-        :variants="getVariants('title')"
+        :variants="getVariantsFor('title')"
       >
         <slot name="title" />
       </v-drawer-title>
@@ -18,14 +18,14 @@
   <v-drawer-body
     v-if="hasBody"
     :content="getContent('body')"
-    :variants="getVariants('body')"
+    :variants="getVariantsFor('body')"
   >
     <slot name="body" />
   </v-drawer-body>
   <v-drawer-footer
     v-if="hasFooter"
     :content="getContent('footer')"
-    :variants="getVariants('footer')"
+    :variants="getVariantsFor('footer')"
   >
     <slot name="footer" />
   </v-drawer-footer>

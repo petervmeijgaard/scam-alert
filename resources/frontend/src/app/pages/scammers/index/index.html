@@ -1,3 +1,17 @@
 <v-layout>
-  Scammer Index Page
+  <v-grid :variants="['container', 'no-gutters']">
+    <v-row>
+      <v-col variant="sm">
+        <v-table :headings="table.headings"
+                 :empty-message="table.emptyMessage"
+                 :content="scammer.all"
+        />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col variant="sm">
+        <v-pagination></v-pagination>
+      </v-col>
+    </v-row>
+  </v-grid>
 </v-layout>

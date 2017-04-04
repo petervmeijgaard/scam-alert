@@ -32,7 +32,7 @@ export default {
      */
     classNames() {
       return CSSUtil
-        .getElementClasses(this.block, this.$options.element, this.variants)
+        .getElementClasses(this.block, this.$options.element, this.getVariants)
         .map(className => this.getClass(className));
     },
   },

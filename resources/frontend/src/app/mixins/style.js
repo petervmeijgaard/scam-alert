@@ -14,6 +14,24 @@ export default {
         return [];
       },
     },
+
+    /**
+     * The variant of the component.
+     */
+    variant: {
+      type: String,
+      required: false,
+    },
+  },
+
+  computed: {
+    getVariants() {
+      if (this.variant) {
+        this.variants.push(this.variant);
+      }
+
+      return this.variants;
+    },
   },
 
   methods: {
