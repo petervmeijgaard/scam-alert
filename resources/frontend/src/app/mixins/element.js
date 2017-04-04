@@ -35,5 +35,14 @@ export default {
         .getElementClasses(this.block, this.$options.element, this.getVariants)
         .map(className => this.getClass(className));
     },
+
+    /**
+     * Get the element class name
+     *
+     * @returns {String} The class name of the element.
+     */
+    getElementClassName() {
+      return CSSUtil.has(this.block, this.$options.element);
+    },
   },
 };

@@ -94,7 +94,7 @@ export default {
      * @returns {Array} The CSS module class names.
      */
     classNames() {
-      const classNames = CSSUtil.getBlockClasses(this.$options.name, this.variants);
+      const classNames = CSSUtil.getBlockClasses(this.$options.name, this.getVariants);
 
       if (this.isActive) {
         classNames.push(CSSUtil.variant(this.$options.name, 'active'));

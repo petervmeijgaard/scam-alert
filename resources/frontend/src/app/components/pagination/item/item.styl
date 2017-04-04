@@ -1,0 +1,18 @@
+@import './../../../../assets/stylus/imports.styl'
+
+.pagination
+  +has('item')
+    border-radius: .125rem
+    color: palette('Grey', '600')
+    cursor: pointer
+    display: inline-block
+    font-size: 1rem
+    font-weight: 500
+    height: 1.5rem
+    line-height: 1.5rem
+    text-align: center
+    text-decoration: none
+    vertical-align: middle
+    width: 1.5rem
+    +variant('active')
+      color: palette('Green')

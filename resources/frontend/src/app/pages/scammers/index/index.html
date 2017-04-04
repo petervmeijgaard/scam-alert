@@ -10,7 +10,10 @@
     </v-row>
     <v-row>
       <v-col variant="sm">
-        <v-pagination></v-pagination>
+        <v-pagination
+          :pagination="scammer.pagination"
+          :switch-function="switchFunction"
+        />
       </v-col>
     </v-row>
   </v-grid>

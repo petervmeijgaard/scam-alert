@@ -23,10 +23,10 @@ export default {
    */
   props: {
     /**
-     * The title being displayed.
+     * The routes being displayed.
      */
     routes: {
-      type: [Array],
+      type: Array,
       required: true,
     },
   },

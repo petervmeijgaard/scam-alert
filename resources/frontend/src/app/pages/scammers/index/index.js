@@ -44,4 +44,9 @@ export default {
     VTable,
     VPagination,
   },
+  methods: {
+    switchFunction() {
+      console.log('test');
+    },
+  },
 };
