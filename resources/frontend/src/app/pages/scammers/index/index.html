@@ -1,6 +1,13 @@
 <v-layout>
   <v-grid variant="container">
     <v-row>
+      <v-col>
+        <v-card>
+          Scammers
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
       <v-col variant="sm">
         <v-table :headings="table.headings"
                  :empty-message="table.emptyMessage"
@@ -9,21 +16,28 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col variant="sm">
-        <v-pagination
-          :pagination="scammer.pagination"
-          :switch-page-function="setPage"
-        />
-      </v-col>
-      <v-col variant="sm">
-        <select
-          class="form-control"
-          v-model="limit"
-        >
-          <option>5</option>
-          <option>10</option>
-          <option>15</option>
-        </select>
+      <v-col>
+        <v-card>
+          <v-row variant="sm-center" slot="body">
+            <v-col variant="sm">
+              <v-pagination
+                :pagination="scammer.pagination"
+                :switch-page-function="setPage"
+                variant="small"
+              />
+            </v-col>
+            <v-col variant="sm">
+              <select
+                class="form-control"
+                v-model="limit"
+              >
+                <option>5</option>
+                <option>10</option>
+                <option>15</option>
+              </select>
+            </v-col>
+          </v-row>
+        </v-card>
       </v-col>
     </v-row>
   </v-grid>

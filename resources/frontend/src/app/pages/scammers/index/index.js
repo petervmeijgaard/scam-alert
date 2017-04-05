@@ -6,13 +6,11 @@ import * as VCol from './../../../components/col/col.vue';
 import * as VLayout from './../../../layouts/base/base.vue';
 import * as VTable from './../../../components/table/table.vue';
 import * as VPagination from './../../../components/pagination/pagination.vue';
+import * as VCard from './../../../components/card/card.vue';
 
 export default {
   data() {
     return {
-      grid: {
-        variants: ['container'],
-      },
       table: {
         headings: [{
           title: 'Id',
@@ -51,6 +49,7 @@ export default {
     VLayout,
     VTable,
     VPagination,
+    VCard,
   },
   methods: {
     setPage(page) {
