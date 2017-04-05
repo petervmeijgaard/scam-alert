@@ -73,7 +73,7 @@ export default {
     /**
      * This method will emit the @click event to the parent.
      */
-    emitClick () {
+    emitClick() {
       if (this.isEnabled) {
         this.$emit('click');
       }

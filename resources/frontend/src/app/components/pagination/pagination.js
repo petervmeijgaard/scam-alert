@@ -32,7 +32,7 @@ export default {
     /**
      * The function used to switch the page.
      */
-    switchFunction: {
+    switchPageFunction: {
       type: Function,
       required: true,
     },
@@ -81,10 +81,7 @@ export default {
      * @param {Number} page The page number.
      */
     goToPage(page) {
-      this.switchFunction({
-        page,
-        limit: this.pagination.limit,
-      });
+      this.switchPageFunction(page);
     },
 
     /**

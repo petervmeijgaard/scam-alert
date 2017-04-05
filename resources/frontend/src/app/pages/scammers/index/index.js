@@ -40,9 +40,7 @@ export default {
         return this.scammer.pagination.limit;
       },
       set(limit) {
-        this.$store.dispatch('scammer/all', {
-          limit
-        });
+        this.setLimit(limit);
       },
     },
   },
@@ -55,8 +53,16 @@ export default {
     VPagination,
   },
   methods: {
-    switchFunction(params) {
-      this.$store.dispatch('scammer/all', params);
+    setPage(page) {
+      this.$store.dispatch('scammer/all', (proxy) => {
+        proxy.setParameter('page', page);
+      });
+    },
+    setLimit(limit) {
+      this.$store.dispatch('scammer/all', (proxy) => {
+        proxy.setParameter('limit', limit)
+          .removeParameter('page');
+      });
     },
   },
 };
