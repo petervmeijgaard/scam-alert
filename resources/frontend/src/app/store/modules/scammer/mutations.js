@@ -84,9 +84,8 @@ export default {
       page -= 1;
     }
 
-    store.dispatch('scammer/all', {
-      limit: state.pagination.limit,
-      page,
+    store.dispatch('scammer/all', (proxy) => {
+      proxy.setParameter('page', page);
     });
   },
 };
