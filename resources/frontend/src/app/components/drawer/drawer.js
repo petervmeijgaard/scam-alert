@@ -79,7 +79,7 @@ export default {
   data() {
     return {
       navIcon: {
-        variants: ['green'],
+        variant: 'green',
       },
     };
   },

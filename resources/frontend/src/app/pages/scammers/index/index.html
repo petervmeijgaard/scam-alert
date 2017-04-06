@@ -3,15 +3,24 @@
     <v-row>
       <v-col>
         <v-card>
-          Scammers
+          <v-form
+            slot="body"
+            :action="setQuery"
+          >
+            <v-text-box
+              v-model="query"
+              placeholder="Search for scammers"
+            />
+          </v-form>
         </v-card>
       </v-col>
     </v-row>
     <v-row>
       <v-col variant="sm">
-        <v-table :headings="table.headings"
-                 :empty-message="table.emptyMessage"
-                 :content="scammer.all"
+        <v-table
+          :headings="table.headings"
+          :empty-message="table.emptyMessage"
+          :content="scammer.all"
         />
       </v-col>
     </v-row>

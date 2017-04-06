@@ -36,7 +36,10 @@ class ScammersController extends Controller
             $this->setPagination(Input::get('limit'));
         }
 
-        $pagination = Scammer::paginate($this->getPagination());
+        $pagination = Input::get('q') ?
+            Scammer::search(Input::get('q'))->paginate($this->getPagination()) :
+            Scammer::paginate($this->getPagination());
+
         $scammers = $this->transformer->transformCollection(collect($pagination->items()));
 
         return $this->respondWithPagination($pagination, [

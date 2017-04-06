@@ -13,11 +13,19 @@ export default {
      * @returns {Array} The variants.
      */
     getVariantsFor(element) {
-      if (this[element] && this[element].variants) {
-        return this[element].variants;
+      if (!this[element] || !(this[element].variants || this[element].variant)) {
+        return [];
       }
 
-      return [];
+      if (!this[element].variants) {
+        this[element].variants = [];
+      }
+
+      if (this[element].variant) {
+        this[element].variants.push(this[element].variant);
+      }
+
+      return this[element].variants;
     },
 
     /**
@@ -27,7 +35,7 @@ export default {
      *
      * @returns {String|undefined} The variants.
      */
-    getContent(element) {
+    getContentFor(element) {
       if (typeof this[element] === 'string') {
         return this[element];
       }
