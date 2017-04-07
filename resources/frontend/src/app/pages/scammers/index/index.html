@@ -1,7 +1,7 @@
 <v-layout>
   <v-grid variant="container">
     <v-row>
-      <v-col variant="sm-3">
+      <v-col :variants="['md-4', 'lg-3']">
         <v-card>
           <v-form
             slot="body"
@@ -29,7 +29,7 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col variant="sm-justify">
+      <v-col variant="xs-justify">
         <v-card variant="inline">
           <v-pagination
             :pagination="scammer.pagination"
@@ -39,7 +39,11 @@
           />
         </v-card>
         <v-card variant="inline">
-          <v-select slot="body"></v-select>
+          <v-select
+            slot="body"
+            v-model="limit"
+            :items="pageNumbers"
+          ></v-select>
         </v-card>
       </v-col>
     </v-row>

@@ -31,6 +31,11 @@ export default {
         }],
         emptyMessage: 'No scammers available',
       },
+      pageNumbers: [
+        5,
+        10,
+        15,
+      ],
     };
   },
   computed: {

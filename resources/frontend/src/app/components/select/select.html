@@ -3,13 +3,13 @@
   <v-select-label @click="enable">
     <v-select-selected
       ref="selected"
-      :content="selected || items[0]"
+      :content="selectedContent"
     />
     <v-select-icon/>
   </v-select-label>
 
   <transition name="fade">
-    <v-select-items
+    <v-select-list
       :offset-right="offsetRight"
       :offset-top="offsetTop"
       ref="items"
@@ -18,11 +18,11 @@
       <v-select-item
         v-for="item in items"
         :key="item"
-        :is-selected="item === selected"
-        @click="activate(item)"
-        :content="item"
+        :is-selected="isSelected(item)"
+        @click="select(item)"
+        :content="getContentFrom(item)"
       />
-    </v-select-items>
+    </v-select-list>
   </transition>
 
 </div>

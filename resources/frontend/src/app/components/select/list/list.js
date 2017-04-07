@@ -6,12 +6,12 @@ export default {
   /**
    * The name of the component.
    */
-  name: 'select-items',
+  name: 'select-list',
 
   /**
    * The element name of the component.
    */
-  element: 'items',
+  element: 'list',
 
   /**
    * The mixins used to extend the component.
