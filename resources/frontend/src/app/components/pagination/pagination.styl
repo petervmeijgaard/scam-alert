@@ -1,13 +1,16 @@
 @import './../../../assets/stylus/imports.styl'
 
 .pagination
+  align-items: center
   background-color: palette('White')
   border-radius: .125rem
   box-shadow: $box_shadow_minimum
-  display: inline-block
+  display: inline-flex
+  flex-direction: row
   padding: 1rem
-  +variant('block')
-    display: block
+  width: 100%
+  +variant('inline')
+    display: inline-flex
   +variant('small')
     box-shadow: none
     background-color: none

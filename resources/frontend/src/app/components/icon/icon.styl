@@ -1,3 +1,5 @@
+@import './../../../assets/stylus/imports.styl'
+
 .icon
   font-family: 'Material Icons'
   font-feature-settings: 'liga'
@@ -5,7 +7,7 @@
   font-style: normal
   font-size: 1.5rem
   direction: ltr
-  display: inline-block
+  display: flex
   letter-spacing: normal
   line-height: 1
   text-transform: none
@@ -14,3 +16,6 @@
   -webkit-font-smoothing: antialiased
   text-rendering: optimizeLegibility
   -moz-osx-font-smoothing: grayscale
+  +variant('signifier')
+    vertical-align: middle
+    color: palette('Grey')

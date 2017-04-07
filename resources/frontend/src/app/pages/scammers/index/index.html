@@ -1,16 +1,20 @@
 <v-layout>
   <v-grid variant="container">
     <v-row>
-      <v-col>
+      <v-col variant="sm-3">
         <v-card>
           <v-form
             slot="body"
             :action="setQuery"
           >
-            <v-text-box
-              v-model="query"
-              placeholder="Search for scammers"
-            />
+            <v-input-group>
+              <v-icon variant="signifier">search</v-icon>
+              <v-text-field
+                variant="with-signifier"
+                v-model="query"
+                placeholder="Search for scammers"
+              />
+            </v-input-group>
           </v-form>
         </v-card>
       </v-col>
@@ -25,27 +29,17 @@
       </v-col>
     </v-row>
     <v-row>
-      <v-col>
-        <v-card>
-          <v-row variant="sm-center" slot="body">
-            <v-col variant="sm">
-              <v-pagination
-                :pagination="scammer.pagination"
-                :switch-page-function="setPage"
-                variant="small"
-              />
-            </v-col>
-            <v-col variant="sm">
-              <select
-                class="form-control"
-                v-model="limit"
-              >
-                <option>5</option>
-                <option>10</option>
-                <option>15</option>
-              </select>
-            </v-col>
-          </v-row>
+      <v-col variant="sm-justify">
+        <v-card variant="inline">
+          <v-pagination
+            :pagination="scammer.pagination"
+            :switch-page-function="setPage"
+            variant="small"
+            slot="body"
+          />
+        </v-card>
+        <v-card variant="inline">
+          <v-select slot="body"></v-select>
         </v-card>
       </v-col>
     </v-row>

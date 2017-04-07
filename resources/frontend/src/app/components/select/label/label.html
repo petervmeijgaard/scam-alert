@@ -1,0 +1,8 @@
+<div
+  :class="classNames"
+  @click.prevent="$emit('click')"
+>
+  <slot>
+    {{ content }}
+  </slot>
+</div>

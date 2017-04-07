@@ -1,0 +1,28 @@
+<div :class="classNames">
+
+  <v-select-label @click="enable">
+    <v-select-selected
+      ref="selected"
+      :content="selected || items[0]"
+    />
+    <v-select-icon/>
+  </v-select-label>
+
+  <transition name="fade">
+    <v-select-items
+      :offset-right="offsetRight"
+      :offset-top="offsetTop"
+      ref="items"
+      v-if="isActive"
+    >
+      <v-select-item
+        v-for="item in items"
+        :key="item"
+        :is-selected="item === selected"
+        @click="activate(item)"
+        :content="item"
+      />
+    </v-select-items>
+  </transition>
+
+</div>

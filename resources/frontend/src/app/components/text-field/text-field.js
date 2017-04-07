@@ -5,7 +5,7 @@ export default {
   /**
    * The name of the component
    */
-  name: 'text-box',
+  name: 'text-field',
 
   /**
    * The mixins used to extend the component.
