@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <router-view/>
 </template>
 <script>
   /* ============
@@ -9,7 +9,7 @@
    * The entry point of the application
    */
   import store from './store';
-  import { router } from './../bootstrap';
+  import { router, i18n } from './../bootstrap';
 
   export default {
     /**
@@ -27,8 +27,16 @@
      */
     router,
 
+    /**
+     * The translations.
+     */
+    i18n,
+
     mounted() {
       store.dispatch('scammer/all');
+      store.dispatch('application/fetchLanguage');
+
+      this.$i18n.locale = store.state.application.language;
 
       this.$echo
         .channel('scammer')

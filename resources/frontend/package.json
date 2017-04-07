@@ -20,6 +20,7 @@
     "material-design-icons": "^3.0.1",
     "pusher-js": "^4.0.0",
     "vue": "^2.2.6",
+    "vue-i18n": "^6.0.0",
     "vue-router": "^2.3.1",
     "vuex": "^2.2.1",
     "vuex-router-sync": "^4.1.2"

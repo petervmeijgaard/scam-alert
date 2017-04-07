@@ -17,20 +17,7 @@ import * as VSelect from './../../../components/select/select.vue';
 export default {
   data() {
     return {
-      query: '',
-      table: {
-        headings: [{
-          title: 'Full Name',
-          identifier: 'fullName',
-        }, {
-          title: 'First Name',
-          identifier: 'firstName',
-        }, {
-          title: 'Last Name',
-          identifier: 'lastName',
-        }],
-        emptyMessage: 'No scammers available',
-      },
+      query: null,
       pageNumbers: [
         5,
         10,
@@ -50,6 +37,21 @@ export default {
         this.setLimit(limit);
       },
     },
+    table() {
+      return {
+        headings: [{
+          title: this.$t('scammer.full_name'),
+          identifier: 'fullName',
+        }, {
+          title: this.$t('scammer.first_name'),
+          identifier: 'firstName',
+        }, {
+          title: this.$t('scammer.last_name'),
+          identifier: 'lastName',
+        }],
+        emptyMessage: this.$t('overall.not_found', [this.$t('scammer.plural')]),
+      };
+    }
   },
   watch: {
     query(query) {

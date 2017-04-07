@@ -12,7 +12,7 @@
               <v-text-field
                 variant="with-signifier"
                 v-model="query"
-                placeholder="Search for scammers"
+                :placeholder="$t('overall.search', [ $t('scammer.plural') ])"
               />
             </v-input-group>
           </v-form>

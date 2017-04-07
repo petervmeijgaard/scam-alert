@@ -7,6 +7,10 @@
 
 import * as types from './mutation-types';
 
+const fetchLanguage = ({ commit }) => {
+  commit(types.FETCH_LANGUAGE);
+};
+
 /**
  * Action fired to toggle the drawer.
  *
@@ -35,6 +39,7 @@ const hideDrawer = ({ commit }) => {
 };
 
 export default {
+  fetchLanguage,
   toggleDrawer,
   showDrawer,
   hideDrawer,

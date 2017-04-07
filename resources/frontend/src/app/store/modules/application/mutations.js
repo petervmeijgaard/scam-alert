@@ -9,6 +9,7 @@ import {
   TOGGLE_DRAWER,
   SHOW_DRAWER,
   HIDE_DRAWER,
+  FETCH_LANGUAGE,
 } from './mutation-types';
 
 export default {
@@ -37,5 +38,16 @@ export default {
    */
   [HIDE_DRAWER](state) {
     state.drawerActive = false;
+  },
+
+  /**
+   * Mutation which will fetch the language the drawer.
+   *
+   * @param {Object} state The current state of the store.
+   */
+  [FETCH_LANGUAGE](state) {
+    const language = navigator.language || navigator.userLanguage;
+
+    state.language = language ? language.split('-')[0] : 'en';
   },
 };

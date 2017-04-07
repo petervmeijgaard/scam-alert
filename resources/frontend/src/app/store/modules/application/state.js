@@ -7,4 +7,5 @@
 
 export default {
   drawerActive: false,
+  language: 'en',
 };
