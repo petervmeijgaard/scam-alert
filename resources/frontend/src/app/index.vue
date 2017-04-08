@@ -36,8 +36,6 @@
       store.dispatch('scammer/all');
       store.dispatch('application/fetchLanguage');
 
-      this.$i18n.locale = store.state.application.language;
-
       this.$echo
         .channel('scammer')
         .listen('Scammer.Created', scammer => this.$bus.$emit('scammer@created', scammer))

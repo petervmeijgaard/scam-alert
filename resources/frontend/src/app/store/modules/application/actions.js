@@ -8,6 +8,16 @@
 import * as types from './mutation-types';
 
 /**
+ * Action fired to set the language of the website.
+ *
+ * @param {function} commit   Commit function to update the store.
+ * @param {String}   language The new language.
+ */
+const changeLanguage = ({ commit }, language) => {
+  commit(types.SET_LANGUAGE, language);
+};
+
+/**
  * Action fired to fetch the language from the browser settings.
  *
  * @param {function} commit Commit function to update the store.
@@ -44,6 +54,7 @@ const hideDrawer = ({ commit }) => {
 };
 
 export default {
+  changeLanguage,
   fetchLanguage,
   toggleDrawer,
   showDrawer,

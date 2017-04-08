@@ -88,7 +88,7 @@ Object.defineProperty(Vue.prototype, '$echo', {
  * Vuex Router Sync
  * ============
  *
- * Effortlessly keep vue-Router and vuex store in sync.
+ * Effortlessly keep vue-router and vuex store in sync.
  *
  * https://github.com/vuejs/vuex-router-sync/blob/master/README.md
  */
@@ -114,9 +114,11 @@ export const router = new VueRouter({
   routes,
 });
 router.afterEach(() => {
-  setTimeout(() => {
-    bus.$emit('application@hideDrawer');
-  });
+  if (store.state.application.drawerActive) {
+    setTimeout(() => {
+      bus.$emit('application@hideDrawer');
+    });
+  }
 });
 VuexRouterSync.sync(store, router);
 
@@ -137,9 +139,17 @@ import messages from './app/locale';
 Vue.use(VueI18n);
 
 export const i18n = new VueI18n({
+  locale: store.state.application.language,
   fallbackLocale: 'en',
   messages,
 });
+
+store.watch(
+  state => state.application.language,
+  (language) => {
+    i18n.locale = language;
+  },
+);
 
 
 /* ============
@@ -147,13 +157,6 @@ export const i18n = new VueI18n({
  * ============
  *
  * Require the application styling.
- * Stylus is used for this boilerplate.
- *
- * If you don't want to use Stylus, that's fine!
- * Replace the stylus directory with the CSS preprocessor you want.
- * Require the entry point here & install the webpack loader.
- *
- * It's that easy...
  *
  * http://stylus-lang.com/
  */
