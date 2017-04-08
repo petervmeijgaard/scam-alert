@@ -14,6 +14,17 @@ import {
 
 export default {
   /**
+   * Mutation which will fetch the language from the browser.
+   *
+   * @param {Object} state The current state of the store.
+   */
+  [FETCH_LANGUAGE](state) {
+    const language = navigator.language || navigator.userLanguage;
+
+    state.language = language ? language.split('-')[0] : 'en';
+  },
+
+  /**
    * Mutation which will toggle the drawer.
    *
    * @param {Object} state The current state of the store.
@@ -38,16 +49,5 @@ export default {
    */
   [HIDE_DRAWER](state) {
     state.drawerActive = false;
-  },
-
-  /**
-   * Mutation which will fetch the language the drawer.
-   *
-   * @param {Object} state The current state of the store.
-   */
-  [FETCH_LANGUAGE](state) {
-    const language = navigator.language || navigator.userLanguage;
-
-    state.language = language ? language.split('-')[0] : 'en';
   },
 };

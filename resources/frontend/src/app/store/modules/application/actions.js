@@ -7,6 +7,11 @@
 
 import * as types from './mutation-types';
 
+/**
+ * Action fired to fetch the language from the browser settings.
+ *
+ * @param {function} commit Commit function to update the store.
+ */
 const fetchLanguage = ({ commit }) => {
   commit(types.FETCH_LANGUAGE);
 };
