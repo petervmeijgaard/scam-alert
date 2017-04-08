@@ -48,6 +48,21 @@ export default {
     },
   },
 
+  methods: {
+    getRouteParameters(item, heading) {
+      const route = JSON.parse(JSON.stringify(heading.urlTo));
+
+      Object.keys(route.params).forEach((key) => {
+        route.params[key] = item[route.params[key]];
+      });
+
+      return route;
+    },
+    getContent(item, heading) {
+      return item[heading.identifier];
+    },
+  },
+
   /**
    * The sub components for this component.
    */

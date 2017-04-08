@@ -41,6 +41,12 @@ export default {
       return {
         headings: [{
           title: this.$t('scammer.full_name'),
+          urlTo: {
+            name: 'scammers.show',
+            params: {
+              scammerId: 'id',
+            },
+          },
           identifier: 'fullName',
         }, {
           title: this.$t('scammer.first_name'),

@@ -2,7 +2,7 @@
   "presets": [
     "stage-2"
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": ["transform-runtime", "transform-vue-jsx"],
   "comments": false,
   "env": {
     "test": {
