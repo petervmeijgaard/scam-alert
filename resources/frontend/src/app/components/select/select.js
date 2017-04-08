@@ -54,13 +54,15 @@ export default {
    */
   data() {
     return {
-      offsetRight: 0,
       offsetTop: 0,
       selected: null,
       isActive: false,
     };
   },
 
+  /**
+   * The computed properties for the component.
+   */
   computed: {
     /**
      * Get the selected content.
@@ -78,8 +80,20 @@ export default {
 
       return this.selected[this.content];
     },
+
+    /**
+     * Computed property which will return the index of the selected item.
+     *
+     * @returns {Number} The index of the selected item.
+     */
+    selectedIndex() {
+      return this.items.indexOf(this.selected);
+    },
   },
 
+  /**
+   * The methods which the component can use.
+   */
   methods: {
     /**
      * Method used to fetch the content from an item.
@@ -110,9 +124,6 @@ export default {
      */
     enable() {
       this.isActive = true;
-      Vue.nextTick(() => {
-        this.calculateOffset();
-      });
     },
 
     /**
@@ -124,38 +135,6 @@ export default {
      */
     isSelected(item) {
       return item === this.selected;
-    },
-
-    /**
-     * Will calculate the offset for the top and right.
-     */
-    calculateOffset() {
-      this.calculateOffsetRight();
-      this.calculateOffsetTop();
-    },
-
-    /**
-     * This method will compute the offset on the top of the list.
-     */
-    calculateOffsetTop() {
-      const index = this.items.indexOf(this.selected);
-      let offset = -20;
-
-      if (index > 0) {
-        offset = -20 - (index * 48);
-      }
-
-      this.offsetTop = offset;
-    },
-
-    /**
-     * This method will compute the offset on the right of the list.
-     */
-    calculateOffsetRight() {
-      const selectedWidth = this.$refs.selected.$el.offsetWidth + 8;
-      const itemsWidth = this.$refs.items.$el.offsetWidth - 32;
-
-      this.offsetRight = selectedWidth - itemsWidth;
     },
   },
 

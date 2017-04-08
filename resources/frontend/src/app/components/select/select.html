@@ -10,8 +10,8 @@
 
   <transition name="fade">
     <v-select-list
-      :offset-right="offsetRight"
-      :offset-top="offsetTop"
+      :selected-index="selectedIndex"
+      :selected-component="$refs.selected"
       ref="items"
       v-if="isActive"
     >

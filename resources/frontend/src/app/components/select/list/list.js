@@ -27,20 +27,31 @@ export default {
    */
   props: {
     /**
-     * The offset from the right.
+     * The selected component.
      */
-    offsetRight: {
-      type: Number,
+    selectedComponent: {
+      type: Object,
       required: true,
     },
 
     /**
-     * The offset from the top.
+     * The index of the selected item.
      */
-    offsetTop: {
+    selectedIndex: {
       type: Number,
       required: true,
     },
+  },
+
+  /**
+   * The data of the component
+   *
+   * @returns {Object} The data.
+   */
+  data() {
+    return {
+      offsetRight: 0,
+    };
   },
 
   /**
@@ -48,15 +59,53 @@ export default {
    */
   computed: {
     /**
+     * Computed property for the offset on the top.
+     *
+     * @returns {number} The offset on the top.
+     */
+    offsetTop() {
+      let offset = -20;
+
+      if (this.selectedIndex > 0) {
+        offset = -20 - (this.selectedIndex * 48);
+      }
+
+      return offset;
+    },
+
+    /**
      * The inline styling.
      *
      * @returns {Object} The styling.
      */
     inlineStyle() {
       return {
-        right: `${this.offsetRight}px`,
-        top: `${this.offsetTop}px`,
+        right: `${this.offsetRight / 16}rem`,
+        top: `${this.offsetTop / 16}rem`,
       };
     },
+  },
+
+  /**
+   * The methods which the component can use.
+   */
+  methods: {
+    /**
+     * This method will compute the offset on the right of the list.
+     */
+    calculateOffsetRight() {
+      const selectedWidth = this.selectedComponent.$el.offsetWidth + 8;
+      const itemsWidth = this.$el.offsetWidth - 32;
+
+      this.offsetRight = selectedWidth - itemsWidth;
+    },
+  },
+
+  /**
+   * When the component has been mounted,
+   * this method will be fired.
+   */
+  mounted() {
+    this.calculateOffsetRight();
   },
 };
