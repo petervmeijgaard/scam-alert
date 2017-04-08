@@ -1,4 +1,3 @@
-import CSSUtil from './../../utils/css';
 import BlockMixin from './../../mixins/block';
 import ComponentMixin from './../../mixins/component';
 import SlotMixin from './../../mixins/slot';
@@ -27,17 +26,6 @@ export default {
    * The properties which the component can use.
    */
   props: {
-    /**
-     * Whether the drawer is active.
-     */
-    isActive: {
-      required: false,
-      type: Boolean,
-      default() {
-        return true;
-      },
-    },
-
     /**
      * The title being displayed.
      */
@@ -88,21 +76,6 @@ export default {
    * The computed properties for the component.
    */
   computed: {
-    /**
-     * Get the CSS module class names.
-     *
-     * @returns {Array} The CSS module class names.
-     */
-    classNames() {
-      const classNames = CSSUtil.getBlockClasses(this.$options.name, this.getVariants);
-
-      if (this.isActive) {
-        classNames.push(CSSUtil.variant(this.$options.name, 'active'));
-      }
-
-      return classNames.map(className => this.getClass(className));
-    },
-
     /**
      * Checks if the component has a body.
      *

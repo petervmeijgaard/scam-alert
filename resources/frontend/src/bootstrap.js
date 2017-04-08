@@ -115,7 +115,7 @@ export const router = new VueRouter({
 });
 router.afterEach(() => {
   if (store.state.application.drawerActive) {
-    setTimeout(() => {
+    Vue.nextTick(() => {
       bus.$emit('application@hideDrawer');
     });
   }
