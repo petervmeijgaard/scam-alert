@@ -1,6 +1,5 @@
 import BlockMixin from './../../mixins/block';
 import ComponentMixin from './../../mixins/component';
-import Vue from 'vue';
 import * as VSelectIcon from './icon/icon.vue';
 import * as VSelectSelected from './selected/selected.vue';
 import * as VSelectLabel from './label/label.vue';

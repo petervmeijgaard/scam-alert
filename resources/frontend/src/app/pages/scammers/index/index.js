@@ -51,7 +51,7 @@ export default {
         }],
         emptyMessage: this.$t('overall.not_found', [this.$t('scammer.plural')]),
       };
-    }
+    },
   },
   watch: {
     query(query) {
