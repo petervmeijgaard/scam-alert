@@ -13,7 +13,7 @@ import * as types from './mutation-types';
  * @param {function} commit   Commit function to update the store.
  * @param {String}   language The new language.
  */
-const changeLanguage = ({ commit }, language) => {
+const setLanguage = ({ commit }, language) => {
   commit(types.SET_LANGUAGE, language);
 };
 
@@ -54,7 +54,7 @@ const hideDrawer = ({ commit }) => {
 };
 
 export default {
-  changeLanguage,
+  setLanguage,
   fetchLanguage,
   toggleDrawer,
   showDrawer,
