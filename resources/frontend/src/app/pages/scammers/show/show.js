@@ -8,6 +8,10 @@
 import Proxy from './../../../proxies/ScammerProxy';
 import Transformer from './../../../transformers/ScammerTransformer';
 import * as VLayout from './../../../layouts/base/base.vue';
+import * as VCard from './../../../components/card/card.vue';
+import * as VGrid from './../../../components/grid/grid.vue';
+import * as VRow from './../../../components/row/row.vue';
+import * as VCol from './../../../components/col/col.vue';
 
 const proxy = new Proxy();
 
@@ -40,6 +44,10 @@ export default {
 
   components: {
     VLayout,
+    VCard,
+    VGrid,
+    VRow,
+    VCol,
   },
 
   mounted() {
