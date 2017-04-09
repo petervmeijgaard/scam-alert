@@ -25,9 +25,9 @@
         v-for="heading in headings"
         :key="heading"
       >
-        <router-link :to="getRouteParameters(item, heading)" v-if="heading.urlTo">
+        <v-table-link :to="getRouteParameters(item, heading)" v-if="heading.urlTo">
           {{ getContent(item, heading) }}
-        </router-link>
+        </v-table-link>
         <span v-else>
           {{ getContent(item, heading) }}
         </span>

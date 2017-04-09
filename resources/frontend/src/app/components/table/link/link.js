@@ -6,12 +6,12 @@ export default {
   /**
    * The name of the component
    */
-  name: 'table-col',
+  name: 'table-link',
 
   /**
    * The element name of the component.
    */
-  element: 'col',
+  element: 'link',
 
   /**
    * The mixins used to extend the component.
@@ -27,24 +27,11 @@ export default {
    */
   props: {
     /**
-     * The type of the column.
+     * The route.
      */
-    type: {
-      type: String,
+    to: {
+      type: Object,
       required: true,
     },
-  },
-
-  /**
-   * Render method which is used to render the component.
-   *
-   * @returns {XML} The XML.
-   */
-  render() {
-    const content = this.$slots.default || this.content;
-
-    return this.type === 'head' ?
-      <th class={this.classNames}>{content}</th> :
-      <td class={this.classNames}>{content}</td>;
   },
 };

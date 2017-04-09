@@ -4,6 +4,7 @@ import * as VTableHead from './head/head.vue';
 import * as VTableBody from './body/body.vue';
 import * as VTableRow from './row/row.vue';
 import * as VTableCol from './col/col.vue';
+import * as VTableLink from './link/link.vue';
 
 export default {
   /**
@@ -71,5 +72,6 @@ export default {
     VTableBody,
     VTableRow,
     VTableCol,
+    VTableLink,
   },
 };
