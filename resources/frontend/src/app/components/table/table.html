@@ -24,8 +24,14 @@
         type="body"
         v-for="heading in headings"
         :key="heading"
-        :content="item[heading.identifier]"
-      />
+      >
+        <v-table-link :to="getRouteParameters(item, heading)" v-if="heading.urlTo">
+          {{ getContent(item, heading) }}
+        </v-table-link>
+        <span v-else>
+          {{ getContent(item, heading) }}
+        </span>
+      </v-table-col>
     </v-table-row>
 
     <v-table-row

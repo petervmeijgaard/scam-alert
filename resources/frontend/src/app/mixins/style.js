@@ -43,11 +43,11 @@ export default {
      * @returns {string} The class name used as the CSS module.
      */
     getClass(className) {
-      if (!this.$style[className]) {
-        return '';
+      if (!this.$style) {
+        return className;
       }
 
-      return this.$style[className];
+      return this.$style[className] || '';
     },
   },
 };

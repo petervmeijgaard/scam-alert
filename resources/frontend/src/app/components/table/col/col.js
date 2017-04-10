@@ -38,17 +38,13 @@ export default {
   /**
    * Render method which is used to render the component.
    *
-   * @param {function} createElement This method will create a new element.
-   *
-   * @returns {VNode} A virtual Vue element.
+   * @returns {XML} The XML.
    */
-  render(createElement) {
-    return createElement(
-      this.type === 'head' ? 'th' : 'td',
-      {
-        class: this.classNames,
-      },
-      this.$slots.default || this.content,
-    );
+  render() {
+    const content = this.$slots.default || this.content;
+
+    return this.type === 'head' ?
+      <th class={this.classNames}>{content}</th> :
+      <td class={this.classNames}>{content}</td>;
   },
 };

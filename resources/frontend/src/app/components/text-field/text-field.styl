@@ -1,0 +1,20 @@
+@import './../../../assets/stylus/imports.styl'
+
+.text-field
+  border: none
+  border-bottom: .0625rem solid palette('Grey')
+  background-color: transparent
+  outline: none
+  font-size: 1rem
+  padding: .5rem 0
+  transition: border-bottom-color $transition_speed ease-in-out
+  display: inline-flex
+  vertical-align: middle
+  margin: 0
+  &:focus
+    border-bottom-color: palette('Green')
+  +variant('with-signifier')
+    margin-left: 1rem
+    flex-grow: 1
+    flex-basis: 0
+    max-width: 100%

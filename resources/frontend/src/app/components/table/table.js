@@ -4,6 +4,7 @@ import * as VTableHead from './head/head.vue';
 import * as VTableBody from './body/body.vue';
 import * as VTableRow from './row/row.vue';
 import * as VTableCol from './col/col.vue';
+import * as VTableLink from './link/link.vue';
 
 export default {
   /**
@@ -48,6 +49,21 @@ export default {
     },
   },
 
+  methods: {
+    getRouteParameters(item, heading) {
+      const route = JSON.parse(JSON.stringify(heading.urlTo));
+
+      Object.keys(route.params).forEach((key) => {
+        route.params[key] = item[route.params[key]];
+      });
+
+      return route;
+    },
+    getContent(item, heading) {
+      return item[heading.identifier];
+    },
+  },
+
   /**
    * The sub components for this component.
    */
@@ -56,5 +72,6 @@ export default {
     VTableBody,
     VTableRow,
     VTableCol,
+    VTableLink,
   },
 };

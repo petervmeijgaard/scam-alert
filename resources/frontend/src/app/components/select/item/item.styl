@@ -1,0 +1,15 @@
+@import './../../../../assets/stylus/imports.styl'
+
+.select
+  +has('item')
+    color: palette('Grey', '700')
+    line-height: 1
+    padding: 1rem
+    transition: background-color $transition_speed ease-in-out
+    &:hover
+      background-color: palette('Grey', '200')
+      cursor: pointer
+
+    +variant('selected')
+      background-color: palette('Grey', '200')
+      color: palette('Green', '600')

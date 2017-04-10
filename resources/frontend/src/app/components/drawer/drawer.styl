@@ -5,12 +5,10 @@
   display: flex
   flex-direction: column
   height: 100%
-  left: -17.5rem
+  left: 0
+  //left: -17.5rem
   position: fixed
   top: 0
-  transition: left 250ms ease-in-out
+  transition: left $transition_speed ease-in-out
   width: 17.5rem
   z-index: 999
-
-  +variant('active')
-    left: 0

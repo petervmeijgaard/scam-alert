@@ -1,3 +1,16 @@
 <v-layout>
-  Scammer Show Page
+  <v-grid variant="container">
+    <v-row>
+      <v-col>
+        <v-card v-if="scammer">
+          <div slot="body">
+            <div>{{ scammer.id }}</div>
+            <div>{{ scammer.firstName }}</div>
+            <div>{{ scammer.lastName }}</div>
+            <div>{{ scammer.fullName }}</div>
+          </div>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-grid>
 </v-layout>

@@ -8,6 +8,25 @@
 import * as types from './mutation-types';
 
 /**
+ * Action fired to set the language of the website.
+ *
+ * @param {function} commit   Commit function to update the store.
+ * @param {String}   language The new language.
+ */
+const setLanguage = ({ commit }, language) => {
+  commit(types.SET_LANGUAGE, language);
+};
+
+/**
+ * Action fired to fetch the language from the browser settings.
+ *
+ * @param {function} commit Commit function to update the store.
+ */
+const fetchLanguage = ({ commit }) => {
+  commit(types.FETCH_LANGUAGE);
+};
+
+/**
  * Action fired to toggle the drawer.
  *
  * @param {function} commit Commit function to update the store.
@@ -35,6 +54,8 @@ const hideDrawer = ({ commit }) => {
 };
 
 export default {
+  setLanguage,
+  fetchLanguage,
   toggleDrawer,
   showDrawer,
   hideDrawer,

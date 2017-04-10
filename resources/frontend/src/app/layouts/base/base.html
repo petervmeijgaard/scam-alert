@@ -1,22 +1,24 @@
 <div>
   <v-header>
 
-    <v-toolbar title="Scam alert" />
+    <v-toolbar title="Scam alert"/>
 
-    <v-drawer
-      :is-active="application.drawerActive"
-      title="Scam alert"
-    >
-      <v-navigation
-        slot="body"
-        :routes="routes"
-      ></v-navigation>
-      <span
-        slot="footer"
+    <transition name="slide-left">
+      <v-drawer
+        v-if="application.drawerActive"
+        title="Scam alert"
       >
+        <v-navigation
+          slot="body"
+          :routes="routes"
+        ></v-navigation>
+        <span
+          slot="footer"
+        >
         Vivid Websolutions &copy;
       </span>
-    </v-drawer>
+      </v-drawer>
+    </transition>
 
   </v-header>
 
@@ -27,7 +29,7 @@
   </v-content>
 
   <transition name="fade">
-    <v-overlay v-show="application.drawerActive" />
+    <v-overlay v-show="application.drawerActive"/>
   </transition>
 
 </div>

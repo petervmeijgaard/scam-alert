@@ -15,12 +15,15 @@ const proxy = new Proxy();
 /**
  * Action fired when all scammers will be fetched.
  *
- * @param {function} commit     Commit function to update the store.
- * @param {Object}   parameters Query parameters used for the AJAX-request.
+ * @param {function} commit Commit function to update the store.
+ * @param {function} fn     Callback to edit the parameters on the proxy.
  */
-const all = ({ commit }, parameters = {}) => {
-  proxy.setParameters(parameters)
-    .all()
+const all = ({ commit }, fn = null) => {
+  if (typeof fn === 'function') {
+    fn(proxy);
+  }
+
+  proxy.all()
     .then((response) => {
       const data = {
         scammers: Transformer.fetchCollection(response.data),

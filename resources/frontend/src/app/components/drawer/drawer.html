@@ -1,14 +1,14 @@
 <div :class="classNames">
   <v-drawer-header
     v-if="hasHeader"
-    :content="getContent('header')"
+    :content="getContentFor('header')"
     :variants="getVariantsFor('header')"
   >
     <slot name="header">
       <v-nav-icon :bar="navIcon"/>
       <v-drawer-title
         v-if="hasTitle"
-        :content="getContent('title')"
+        :content="getContentFor('title')"
         :variants="getVariantsFor('title')"
       >
         <slot name="title" />
@@ -17,14 +17,14 @@
   </v-drawer-header>
   <v-drawer-body
     v-if="hasBody"
-    :content="getContent('body')"
+    :content="getContentFor('body')"
     :variants="getVariantsFor('body')"
   >
     <slot name="body" />
   </v-drawer-body>
   <v-drawer-footer
     v-if="hasFooter"
-    :content="getContent('footer')"
+    :content="getContentFor('footer')"
     :variants="getVariantsFor('footer')"
   >
     <slot name="footer" />
