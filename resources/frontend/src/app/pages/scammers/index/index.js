@@ -8,7 +8,7 @@ import * as VLayout from './../../../layouts/base/base.vue';
 import * as VTable from './../../../components/table/table.vue';
 import * as VPagination from './../../../components/pagination/pagination.vue';
 import { VCard, VCardBody } from './../../../components/card';
-import * as VForm from './../../../components/form/form.vue';
+import { VForm } from './../../../components/form';
 import * as VTextField from './../../../components/text-field/text-field.vue';
 import * as VInputGroup from './../../../components/input-group/input-group.vue';
 import * as VIcon from './../../../components/icon/icon.vue';
