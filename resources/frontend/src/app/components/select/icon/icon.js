@@ -1,7 +1,7 @@
 import ComponentMixin from './../../../mixins/component';
 import ElementMixin from './../../../mixins/element';
 import SlotMixin from './../../../mixins/slot';
-import * as VIcon from './../../icon/icon.vue';
+import { VIcon } from './../../icon';
 
 export default {
   /**

@@ -1,7 +1,7 @@
 import BlockMixin from './../../mixins/block';
 import ComponentMixin from './../../mixins/component';
 import * as VPaginationItem from './item/item.vue';
-import * as VIcon from './../icon/icon.vue';
+import { VIcon }from './../icon';
 
 export default {
   /**
