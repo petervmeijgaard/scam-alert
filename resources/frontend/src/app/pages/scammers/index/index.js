@@ -10,7 +10,7 @@ import * as VPagination from './../../../components/pagination/pagination.vue';
 import { VCard, VCardBody } from './../../../components/card';
 import { VForm } from './../../../components/form';
 import * as VTextField from './../../../components/text-field/text-field.vue';
-import * as VInputGroup from './../../../components/input-group/input-group.vue';
+import { VInputGroup } from './../../../components/input-group';
 import { VIcon }from './../../../components/icon';
 import * as VSelect from './../../../components/select/select.vue';
 
