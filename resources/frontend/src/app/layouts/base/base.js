@@ -9,7 +9,7 @@ import {
 } from './../../components/drawer';
 import * as VNavIcon from './../../components/nav-icon/nav-icon.vue';
 import { VHeader } from './../../components/header';
-import * as VOverlay from './../../components/overlay/overlay.vue';
+import { VOverlay } from './../../components/overlay';
 import { VToolbar, VToolbarTitle } from './../../components/toolbar';
 import * as VNavigation from './../../components/navigation/navigation.vue';
 import ComponentMixin from './../../mixins/component';
