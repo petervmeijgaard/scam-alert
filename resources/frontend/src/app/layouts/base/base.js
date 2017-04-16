@@ -1,10 +1,12 @@
 import { mapState } from 'vuex';
 import { VContent } from './../../components/content';
-import * as VDrawer from './../../components/drawer/drawer.vue';
-import * as VDrawerHeader from './../../components/drawer/header/header.vue';
-import * as VDrawerTitle from './../../components/drawer/title/title.vue';
-import * as VDrawerBody from './../../components/drawer/body/body.vue';
-import * as VDrawerFooter from './../../components/drawer/footer/footer.vue';
+import {
+  VDrawer,
+  VDrawerBody,
+  VDrawerHeader,
+  VDrawerTitle,
+  VDrawerFooter
+} from './../../components/drawer';
 import * as VNavIcon from './../../components/nav-icon/nav-icon.vue';
 import * as VHeader from './../../components/header/header.vue';
 import * as VOverlay from './../../components/overlay/overlay.vue';

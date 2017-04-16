@@ -1,17 +1,11 @@
 <style lang="stylus">
-  @import './../../../assets/stylus/imports.styl'
+  @import '../../../assets/stylus/imports.styl'
 
   .drawer
-    background-color: palette('White')
-    display: flex
-    flex-direction: column
-    height: 100%
-    left: 0
-    position: fixed
-    top: 0
-    transition: left $transition_speed ease-in-out
-    width: 17.5rem
-    z-index: 999
+    +has('header')
+      background-color: palette('White')
+      border-bottom: 0.0625rem solid palette('Grey', '100')
+      height: 4rem
 </style>
 
 <template>
@@ -23,22 +17,27 @@
 </template>
 
 <script>
-  import BlockMixin from './../../mixins/block';
   import ComponentMixin from './../../mixins/component';
+  import ElementMixin from './../../mixins/element';
   import SlotMixin from './../../mixins/slot';
 
   export default {
     /**
-     * The name of the component
+     * The name of the component.
      */
-    name: 'drawer',
+    name: 'drawer-header',
+
+    /**
+     * The element name of the component.
+     */
+    element: 'header',
 
     /**
      * The mixins used to extend the component.
      */
     mixins: [
-      BlockMixin,
       ComponentMixin,
+      ElementMixin,
       SlotMixin,
     ],
   };
