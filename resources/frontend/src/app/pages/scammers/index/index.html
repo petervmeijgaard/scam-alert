@@ -30,19 +30,21 @@
     <v-row>
       <v-col variant="xs-justify">
         <v-card variant="inline">
-          <v-pagination
-            :pagination="scammer.pagination"
-            :switch-page-function="setPage"
-            variant="small"
-            slot="body"
-          />
+          <v-card-body>
+            <v-pagination
+              :pagination="scammer.pagination"
+              :switch-page-function="setPage"
+              variant="small"
+            />
+          </v-card-body>
         </v-card>
         <v-card variant="inline">
-          <v-select
-            slot="body"
-            v-model="limit"
-            :items="pageNumbers"
-          ></v-select>
+          <v-card-body>
+            <v-select
+              v-model="limit"
+              :items="pageNumbers"
+            ></v-select>
+          </v-card-body>
         </v-card>
       </v-col>
     </v-row>

@@ -1,15 +1,11 @@
 <style lang="stylus">
-  @import './../../../assets/stylus/imports.styl'
+  @import '../../../assets/stylus/imports.styl'
 
   .card
-    background-color: palette('White')
-    border-radius: .125rem
-    box-shadow: $box_shadow_minimum
-    display: flex
-    width: 100%
-    +variant('inline')
-      display: inline-flex
-      width: auto
+    +has('body')
+      display: flex
+      padding: 1rem
+      width: 100%
 </style>
 
 <template>
@@ -22,21 +18,26 @@
 
 <script>
   import ComponentMixin from './../../mixins/component';
-  import BlockMixin from './../../mixins/block';
+  import ElementMixin from './../../mixins/element';
   import SlotMixin from './../../mixins/slot';
 
   export default {
     /**
      * The name of the component
      */
-    name: 'card',
+    name: 'card-body',
+
+    /**
+     * The element name of the component.
+     */
+    element: 'body',
 
     /**
      * The mixins used to extend the component.
      */
     mixins: [
       ComponentMixin,
-      BlockMixin,
+      ElementMixin,
       SlotMixin,
     ],
   };
