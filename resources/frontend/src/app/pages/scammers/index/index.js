@@ -1,7 +1,7 @@
 import { mapState } from 'vuex';
 import * as _ from 'lodash';
 
-import * as VGrid from './../../../components/grid/grid.vue';
+import { VGrid } from './../../../components/grid';
 import * as VRow from './../../../components/row/row.vue';
 import { VCol } from './../../../components/col';
 import * as VLayout from './../../../layouts/base/base.vue';
