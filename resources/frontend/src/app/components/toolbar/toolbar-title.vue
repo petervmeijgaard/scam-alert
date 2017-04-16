@@ -1,13 +1,15 @@
 <style lang="stylus">
-  @import './../../../assets/stylus/imports.styl'
+  @import '../../../assets/stylus/imports.styl'
 
   .toolbar
-    box-shadow: $box_shadow_minimum
-    background-color: palette('Green')
-    height: 4rem
-    position: fixed
-    top: 0
-    width: 100%
+    +has('title')
+      color: palette('White')
+      display: inline-flex
+      font-size: 1.125rem
+      font-weight: 400
+      line-height: 4rem
+      position: relative
+      vertical-align: middle
 </style>
 
 <template>
@@ -19,22 +21,27 @@
 </template>
 
 <script>
-  import BlockMixin from './../../mixins/block';
   import ComponentMixin from './../../mixins/component';
+  import ElementMixin from './../../mixins/element';
   import SlotMixin from './../../mixins/slot';
 
   export default {
     /**
      * The name of the component.
      */
-    name: 'toolbar',
+    name: 'toolbar-title',
+
+    /**
+     * The element name of the component.
+     */
+    element: 'title',
 
     /**
      * The mixins used to extend the component.
      */
     mixins: [
-      BlockMixin,
       ComponentMixin,
+      ElementMixin,
       SlotMixin,
     ],
   };

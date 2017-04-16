@@ -10,7 +10,7 @@ import {
 import * as VNavIcon from './../../components/nav-icon/nav-icon.vue';
 import { VHeader } from './../../components/header';
 import * as VOverlay from './../../components/overlay/overlay.vue';
-import * as VToolbar from './../../components/toolbar/toolbar.vue';
+import { VToolbar, VToolbarTitle } from './../../components/toolbar';
 import * as VNavigation from './../../components/navigation/navigation.vue';
 import ComponentMixin from './../../mixins/component';
 
@@ -60,6 +60,7 @@ export default {
     VHeader,
     VOverlay,
     VToolbar,
+    VToolbarTitle,
     VNavigation,
   },
 };

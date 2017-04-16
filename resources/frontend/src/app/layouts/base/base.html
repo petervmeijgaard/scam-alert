@@ -1,7 +1,11 @@
 <div>
   <v-header>
-
-    <v-toolbar title="Scam alert"/>
+    <v-toolbar>
+      <v-nav-icon />
+      <v-toolbar-title>
+        Scam alert
+      </v-toolbar-title>
+    </v-toolbar>
 
     <transition name="slide-left">
       <v-drawer v-if="application.drawerActive">
