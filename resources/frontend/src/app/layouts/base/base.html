@@ -4,19 +4,19 @@
     <v-toolbar title="Scam alert"/>
 
     <transition name="slide-left">
-      <v-drawer
-        v-if="application.drawerActive"
-        title="Scam alert"
-      >
-        <v-navigation
-          slot="body"
-          :routes="routes"
-        ></v-navigation>
-        <span
-          slot="footer"
-        >
-         Vivid Websolutions &copy;
-        </span>
+      <v-drawer v-if="application.drawerActive">
+        <v-drawer-header>
+          <v-nav-icon :bar="navIcon" />
+          <v-drawer-title>
+            Scam alert
+          </v-drawer-title>
+        </v-drawer-header>
+        <v-drawer-body>
+          <v-navigation :routes="routes" />
+        </v-drawer-body>
+        <v-drawer-footer>
+          Vivid Websolutions &copy;
+        </v-drawer-footer>
       </v-drawer>
     </transition>
 
