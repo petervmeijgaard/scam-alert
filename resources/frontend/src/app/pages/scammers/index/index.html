@@ -3,19 +3,18 @@
     <v-row>
       <v-col :variants="['md-4', 'lg-3']">
         <v-card>
-          <v-form
-            slot="body"
-            :action="setQuery"
-          >
-            <v-input-group>
-              <v-icon variant="signifier">search</v-icon>
-              <v-text-field
-                variant="with-signifier"
-                v-model="query"
-                :placeholder="$t('overall.search', [ $t('scammer.plural') ])"
-              />
-            </v-input-group>
-          </v-form>
+          <v-card-body>
+            <v-form :action="setQuery">
+              <v-input-group>
+                <v-icon variant="signifier">search</v-icon>
+                <v-text-field
+                  variant="with-signifier"
+                  v-model="query"
+                  :placeholder="$t('overall.search', [ $t('scammer.plural') ])"
+                />
+              </v-input-group>
+            </v-form>
+          </v-card-body>
         </v-card>
       </v-col>
     </v-row>

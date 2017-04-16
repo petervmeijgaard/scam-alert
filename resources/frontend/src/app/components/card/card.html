@@ -1,7 +1,5 @@
 <div :class="classNames">
-  <v-card-body
-    v-if="hasBody"
-  >
-    <slot name="body" />
-  </v-card-body>
+  <slot>
+    {{ content }}
+  </slot>
 </div>
