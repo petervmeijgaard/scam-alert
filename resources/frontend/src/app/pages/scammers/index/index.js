@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 
 import * as VGrid from './../../../components/grid/grid.vue';
 import * as VRow from './../../../components/row/row.vue';
-import * as VCol from './../../../components/col/col.vue';
+import { VCol } from './../../../components/col';
 import * as VLayout from './../../../layouts/base/base.vue';
 import * as VTable from './../../../components/table/table.vue';
 import * as VPagination from './../../../components/pagination/pagination.vue';

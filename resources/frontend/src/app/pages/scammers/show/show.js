@@ -11,7 +11,7 @@ import * as VLayout from './../../../layouts/base/base.vue';
 import { VCard, VCardBody } from './../../../components/card';
 import * as VGrid from './../../../components/grid/grid.vue';
 import * as VRow from './../../../components/row/row.vue';
-import * as VCol from './../../../components/col/col.vue';
+import { VCol } from './../../../components/col';
 
 const proxy = new Proxy();
 
