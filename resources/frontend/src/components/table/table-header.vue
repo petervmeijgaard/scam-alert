@@ -1,20 +1,9 @@
-<style lang="stylus">
-  @import '~assets/stylus/imports.styl'
-
-  .table
-    +has('head')
-      font-size: 1rem
-      padding: 1rem
-      text-align: left
-      color: palette('Grey', '600')
-</style>
-
 <template>
-  <th :class="classNames">
+  <thead :class="classNames">
     <slot>
       {{ content }}
     </slot>
-  </th>
+  </thead>
 </template>
 
 <script>
@@ -26,12 +15,12 @@
     /**
      * The name of the component
      */
-    name: 'table-head',
+    name: 'table-header',
 
     /**
      * The element name of the component.
      */
-    element: 'head',
+    element: 'header',
 
     /**
      * The mixins used to extend the component.

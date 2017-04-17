@@ -2,21 +2,20 @@
   @import '~assets/stylus/imports.styl'
 
   .table
-    +has('link')
-      color: inherit
-      font-weight: 500
-      text-decoration: none
+    +has('cell')
+      font-size: 1rem
+      padding: 1rem
+      text-align: left
+      color: palette('Grey', '800')
+      font-weight: 400
 </style>
 
 <template>
-  <router-link
-    :to="to"
-    :class="classNames"
-  >
+  <td :class="classNames">
     <slot>
-      {{content}}
+      {{ content }}
     </slot>
-  </router-link>
+  </td>
 </template>
 
 <script>
@@ -28,12 +27,12 @@
     /**
      * The name of the component
      */
-    name: 'table-link',
+    name: 'table-cell',
 
     /**
      * The element name of the component.
      */
-    element: 'link',
+    element: 'cell',
 
     /**
      * The mixins used to extend the component.
@@ -43,18 +42,5 @@
       ElementMixin,
       SlotMixin,
     ],
-
-    /**
-     * The properties which the component can use.
-     */
-    props: {
-      /**
-       * The route.
-       */
-      to: {
-        type: Object,
-        required: true,
-      },
-    },
   };
 </script>

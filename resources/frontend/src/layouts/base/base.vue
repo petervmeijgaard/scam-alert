@@ -78,12 +78,6 @@
 
     data() {
       return {
-        title: {
-          content: 'Scam Alert',
-        },
-        navIcon: {
-          variant: 'green',
-        },
         routes: [
           {
             to: { name: 'home.index' },

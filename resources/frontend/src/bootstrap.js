@@ -146,9 +146,7 @@ export const i18n = new VueI18n({
 
 store.watch(
   state => state.application.language,
-  (language) => {
-    i18n.locale = language;
-  },
+  language => (i18n.locale = language),
 );
 
 
