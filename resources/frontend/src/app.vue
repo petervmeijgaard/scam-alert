@@ -10,7 +10,6 @@
    */
   import store from './store';
   import { router, i18n } from './bootstrap';
-  import eventMapper from './foo/eventMapper';
 
   export default {
     /**
@@ -37,10 +36,11 @@
       store.dispatch('scammer/all');
       store.dispatch('application/fetchLanguage');
 
-      eventMapper.setChannel('scammer')
-        .mapEvent('created')
-        .mapEvent('updated')
-        .mapEvent('deleted');
+      this.$echo
+        .channel('scammer')
+        .listen('Scammer.Created', scammer => store.dispatch('scammer/created', scammer))
+        .listen('Scammer.Updated', scammer => store.dispatch('scammer/updated', scammer))
+        .listen('Scammer.Deleted', scammer => store.dispatch('scammer/deleted', scammer));
     },
   };
 </script>
