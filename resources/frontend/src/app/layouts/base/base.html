@@ -16,7 +16,18 @@
           </v-drawer-title>
         </v-drawer-header>
         <v-drawer-body>
-          <v-navigation :routes="routes" />
+          <v-navigation :routes="routes">
+            <v-navigation-item
+              v-for="route in routes"
+              :key="route"
+            >
+              <v-navigation-link :route="route.to">
+                <v-navigation-content>
+                  {{ route.content }}
+                </v-navigation-content>
+              </v-navigation-link>
+            </v-navigation-item>
+          </v-navigation>
         </v-drawer-body>
         <v-drawer-footer>
           Vivid Websolutions &copy;

@@ -1,28 +1,41 @@
+<style lang="stylus">
+  @import '../../../assets/stylus/imports.styl'
+
+  .navigation
+    +has('content')
+      font-size: 0.875rem
+</style>
+
 <template>
-  <ul :class="classNames">
+  <span :class="classNames">
     <slot>
       {{ content }}
     </slot>
-  </ul>
+  </span>
 </template>
 
 <script>
-  import BlockMixin from './../../mixins/block';
   import ComponentMixin from './../../mixins/component';
+  import ElementMixin from './../../mixins/element';
   import SlotMixin from './../../mixins/slot';
 
   export default {
     /**
      * The name of the component
      */
-    name: 'navigation',
+    name: 'navigation-content',
+
+    /**
+     * The element name of the component.
+     */
+    element: 'content',
 
     /**
      * The mixins used to extend the component.
      */
     mixins: [
-      BlockMixin,
       ComponentMixin,
+      ElementMixin,
       SlotMixin,
     ],
   };
