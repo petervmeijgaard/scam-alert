@@ -7,7 +7,7 @@ import {
   VDrawerTitle,
   VDrawerFooter
 } from './../../components/drawer';
-import * as VNavIcon from './../../components/nav-icon/nav-icon.vue';
+import { VNavIcon } from './../../components/nav-icon';
 import { VHeader } from './../../components/header';
 import { VOverlay } from './../../components/overlay';
 import { VToolbar, VToolbarTitle } from './../../components/toolbar';
