@@ -31,7 +31,7 @@
       create-row-helpers($breakpoint)
     else
       @media (min-width: $width)
-      create-row-helpers($breakpoint)
+        create-row-helpers($breakpoint)
 </style>
 
 <template>
