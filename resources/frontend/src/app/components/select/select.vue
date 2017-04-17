@@ -47,10 +47,10 @@
   import ComponentMixin from './../../mixins/component';
   import {
     VSelectIcon,
-    VSelectSelected,
+    VSelectItem,
     VSelectLabel,
     VSelectList,
-    VSelectItem,
+    VSelectSelected,
   } from './index';
 
   export default {
