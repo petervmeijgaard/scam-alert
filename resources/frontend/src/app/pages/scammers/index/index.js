@@ -1,17 +1,17 @@
 import { mapState } from 'vuex';
 import * as _ from 'lodash';
 
-import * as VGrid from './../../../components/grid/grid.vue';
-import * as VRow from './../../../components/row/row.vue';
-import * as VCol from './../../../components/col/col.vue';
+import { VGrid } from './../../../components/grid';
+import { VRow } from './../../../components/row';
+import { VCol } from './../../../components/col';
 import * as VLayout from './../../../layouts/base/base.vue';
 import * as VTable from './../../../components/table/table.vue';
 import * as VPagination from './../../../components/pagination/pagination.vue';
-import * as VCard from './../../../components/card/card.vue';
-import * as VForm from './../../../components/form/form.vue';
-import * as VTextField from './../../../components/text-field/text-field.vue';
-import * as VInputGroup from './../../../components/input-group/input-group.vue';
-import * as VIcon from './../../../components/icon/icon.vue';
+import { VCard, VCardBody } from './../../../components/card';
+import { VForm } from './../../../components/form';
+import { VTextField } from './../../../components/text-field';
+import { VInputGroup } from './../../../components/input-group';
+import { VIcon } from './../../../components/icon';
 import * as VSelect from './../../../components/select/select.vue';
 
 export default {
@@ -72,6 +72,7 @@ export default {
     VTable,
     VPagination,
     VCard,
+    VCardBody,
     VForm,
     VTextField,
     VIcon,

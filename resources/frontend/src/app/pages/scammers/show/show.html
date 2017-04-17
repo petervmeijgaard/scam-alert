@@ -3,12 +3,12 @@
     <v-row>
       <v-col>
         <v-card v-if="scammer">
-          <div slot="body">
+          <v-card-body>
             <div>{{ scammer.id }}</div>
             <div>{{ scammer.firstName }}</div>
             <div>{{ scammer.lastName }}</div>
             <div>{{ scammer.fullName }}</div>
-          </div>
+          </v-card-body>
         </v-card>
       </v-col>
     </v-row>

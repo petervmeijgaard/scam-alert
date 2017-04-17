@@ -1,22 +1,37 @@
 <div>
   <v-header>
-
-    <v-toolbar title="Scam alert"/>
+    <v-toolbar>
+      <v-nav-icon />
+      <v-toolbar-title>
+        Scam alert
+      </v-toolbar-title>
+    </v-toolbar>
 
     <transition name="slide-left">
-      <v-drawer
-        v-if="application.drawerActive"
-        title="Scam alert"
-      >
-        <v-navigation
-          slot="body"
-          :routes="routes"
-        ></v-navigation>
-        <span
-          slot="footer"
-        >
-        Vivid Websolutions &copy;
-      </span>
+      <v-drawer v-if="application.drawerActive">
+        <v-drawer-header>
+          <v-nav-icon variant="green" />
+          <v-drawer-title>
+            Scam alert
+          </v-drawer-title>
+        </v-drawer-header>
+        <v-drawer-body>
+          <v-navigation :routes="routes">
+            <v-navigation-item
+              v-for="route in routes"
+              :key="route"
+            >
+              <v-navigation-link :route="route.to">
+                <v-navigation-content>
+                  {{ route.content }}
+                </v-navigation-content>
+              </v-navigation-link>
+            </v-navigation-item>
+          </v-navigation>
+        </v-drawer-body>
+        <v-drawer-footer>
+          Vivid Websolutions &copy;
+        </v-drawer-footer>
       </v-drawer>
     </transition>
 

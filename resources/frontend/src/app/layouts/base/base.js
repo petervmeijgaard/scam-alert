@@ -1,10 +1,22 @@
 import { mapState } from 'vuex';
-import * as VContent from './../../components/content/content.vue';
-import * as VDrawer from './../../components/drawer/drawer.vue';
-import * as VHeader from './../../components/header/header.vue';
-import * as VOverlay from './../../components/overlay/overlay.vue';
-import * as VToolbar from './../../components/toolbar/toolbar.vue';
-import * as VNavigation from './../../components/navigation/navigation.vue';
+import { VContent } from './../../components/content';
+import {
+  VDrawer,
+  VDrawerBody,
+  VDrawerHeader,
+  VDrawerTitle,
+  VDrawerFooter
+} from './../../components/drawer';
+import { VNavIcon } from './../../components/nav-icon';
+import { VHeader } from './../../components/header';
+import { VOverlay } from './../../components/overlay';
+import { VToolbar, VToolbarTitle } from './../../components/toolbar';
+import {
+  VNavigation,
+  VNavigationContent,
+  VNavigationItem,
+  VNavigationLink
+} from './../../components/navigation';
 import ComponentMixin from './../../mixins/component';
 
 export default {
@@ -14,6 +26,9 @@ export default {
     return {
       title: {
         content: 'Scam Alert',
+      },
+      navIcon: {
+        variant: 'green',
       },
       routes: [
         {
@@ -42,9 +57,18 @@ export default {
   components: {
     VContent,
     VDrawer,
+    VDrawerHeader,
+    VNavIcon,
+    VDrawerTitle,
+    VDrawerFooter,
+    VDrawerBody,
     VHeader,
     VOverlay,
     VToolbar,
+    VToolbarTitle,
     VNavigation,
+    VNavigationContent,
+    VNavigationLink,
+    VNavigationItem,
   },
 };
