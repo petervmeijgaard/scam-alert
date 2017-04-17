@@ -62,13 +62,11 @@
 <script>
   import BlockMixin from 'mixins/block';
   import ComponentMixin from 'mixins/component';
-  import {
-    VTableBody,
-    VTableCol,
-    VTableHead,
-    VTableLink,
-    VTableRow,
-  } from './index';
+  import VTableBody from './table-body';
+  import VTableCol from './table-col';
+  import VTableHead from './table-head';
+  import VTableLink from './table-link';
+  import VTableRow from './table-row';
 
   export default {
     /**

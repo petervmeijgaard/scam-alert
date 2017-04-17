@@ -53,7 +53,7 @@
 <script>
   import BlockMixin from 'mixins/block';
   import ComponentMixin from 'mixins/component';
-  import { VPaginationItem } from './index';
+  import VPaginationItem from './pagination-item';
   import { VIcon } from 'components/icon';
 
   export default {
