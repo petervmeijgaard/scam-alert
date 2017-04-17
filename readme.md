@@ -17,7 +17,7 @@ $ php artisan key:generate
 
 # Create and migrate the database
 $ php artisan migrate --seed
-$ php artisan scout:import 'App\Models\Scammer`
+$ php artisan scout:import 'App\Models\Scammer'
 $ php artisan passport:install
 ```
 

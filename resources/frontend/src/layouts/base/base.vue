@@ -2,7 +2,7 @@
   <div>
     <v-header>
       <v-toolbar>
-        <v-nav-icon @click.native="toggleDrawer"/>
+        <v-nav-icon @click.native="toggleDrawer" />
         <v-toolbar-title>
           Scam alert
         </v-toolbar-title>
@@ -11,7 +11,7 @@
       <transition name="slide-left">
         <v-drawer v-if="application.drawerActive">
           <v-drawer-header>
-            <v-nav-icon variant="green" @click.native="toggleDrawer"/>
+            <v-nav-icon variant="green" @click.native="toggleDrawer" />
             <v-drawer-title>
               Scam alert
             </v-drawer-title>
@@ -58,25 +58,25 @@
 
 <script>
   import { mapState } from 'vuex';
+  import ComponentMixin from 'mixins/component';
   import { VContent } from 'components/content';
   import {
     VDrawer,
     VDrawerBody,
+    VDrawerFooter,
     VDrawerHeader,
     VDrawerTitle,
-    VDrawerFooter,
   } from 'components/drawer';
-  import { VNavIcon } from 'components/nav-icon';
   import { VHeader } from 'components/header';
-  import { VOverlay } from 'components/overlay';
-  import { VToolbar, VToolbarTitle } from 'components/toolbar';
+  import { VNavIcon } from 'components/nav-icon';
   import {
     VNavigation,
     VNavigationContent,
     VNavigationItem,
     VNavigationLink,
   } from 'components/navigation';
-  import ComponentMixin from 'mixins/component';
+  import { VOverlay } from 'components/overlay';
+  import { VToolbar, VToolbarTitle } from 'components/toolbar';
 
   export default {
     /**
@@ -125,19 +125,19 @@
     components: {
       VContent,
       VDrawer,
-      VDrawerHeader,
-      VNavIcon,
-      VDrawerTitle,
-      VDrawerFooter,
       VDrawerBody,
+      VDrawerFooter,
+      VDrawerHeader,
+      VDrawerTitle,
       VHeader,
-      VOverlay,
-      VToolbar,
-      VToolbarTitle,
+      VNavIcon,
       VNavigation,
       VNavigationContent,
       VNavigationLink,
       VNavigationItem,
+      VOverlay,
+      VToolbar,
+      VToolbarTitle,
     },
   };
 </script>
