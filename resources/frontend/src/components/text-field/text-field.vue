@@ -25,7 +25,6 @@
   <input
     :class="classNames"
     type="text"
-    :placeholder="placeholder"
     :value="value"
     @input="updateInput($event.target.value)"
   >
@@ -37,7 +36,7 @@
 
   export default {
     /**
-     * The name of the component
+     * The name of the component.
      */
     name: 'text-field',
 
@@ -57,14 +56,6 @@
        * The value displayed in the text box.
        */
       value: {
-        type: String,
-        required: false,
-      },
-
-      /**
-       * The placeholder text displayed in the text box.
-       */
-      placeholder: {
         type: String,
         required: false,
       },

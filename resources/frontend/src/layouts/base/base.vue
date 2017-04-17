@@ -2,7 +2,7 @@
   <div>
     <v-header>
       <v-toolbar>
-        <v-nav-icon />
+        <v-nav-icon @click.native="toggleDrawer" />
         <v-toolbar-title>
           Scam alert
         </v-toolbar-title>
@@ -11,20 +11,22 @@
       <transition name="slide-left">
         <v-drawer v-if="application.drawerActive">
           <v-drawer-header>
-            <v-nav-icon variant="green" />
+            <v-nav-icon variant="green" @click.native="toggleDrawer" />
             <v-drawer-title>
               Scam alert
             </v-drawer-title>
           </v-drawer-header>
           <v-drawer-body>
-            <v-navigation :routes="routes">
-              <v-navigation-item
-                v-for="route in routes"
-                :key="route"
-              >
-                <v-navigation-link :route="route.to">
+            <v-navigation>
+              <v-navigation-item>
+                <v-navigation-link :route="{ name: 'home.index' }">
                   <v-navigation-content>
-                    {{ route.content }}
+                    Home
+                  </v-navigation-content>
+                </v-navigation-link>
+                <v-navigation-link :route="{ name: 'scammers.index' }">
+                  <v-navigation-content>
+                    Scammers
                   </v-navigation-content>
                 </v-navigation-link>
               </v-navigation-item>
@@ -45,7 +47,10 @@
     </v-content>
 
     <transition name="fade">
-      <v-overlay v-show="application.drawerActive"/>
+      <v-overlay
+        v-show="application.drawerActive"
+        @click.native="hideDrawer"
+      />
     </transition>
 
   </div>
@@ -53,77 +58,86 @@
 
 <script>
   import { mapState } from 'vuex';
+  import ComponentMixin from 'mixins/component';
   import { VContent } from 'components/content';
   import {
     VDrawer,
     VDrawerBody,
+    VDrawerFooter,
     VDrawerHeader,
     VDrawerTitle,
-    VDrawerFooter,
   } from 'components/drawer';
-  import { VNavIcon } from 'components/nav-icon';
   import { VHeader } from 'components/header';
-  import { VOverlay } from 'components/overlay';
-  import { VToolbar, VToolbarTitle } from 'components/toolbar';
+  import { VNavIcon } from 'components/nav-icon';
   import {
     VNavigation,
     VNavigationContent,
     VNavigationItem,
     VNavigationLink,
   } from 'components/navigation';
-  import ComponentMixin from 'mixins/component';
+  import { VOverlay } from 'components/overlay';
+  import { VToolbar, VToolbarTitle } from 'components/toolbar';
 
   export default {
+    /**
+     * The name of the layout.
+     */
     name: 'base-layout',
 
-    data() {
-      return {
-        title: {
-          content: 'Scam Alert',
-        },
-        navIcon: {
-          variant: 'green',
-        },
-        routes: [
-          {
-            to: { name: 'home.index' },
-            content: 'Home',
-          },
-          {
-            to: { name: 'scammers.index' },
-            content: 'Scammers',
-          },
-        ],
-      };
-    },
+    /**
+     * The mixins used to extend the layout.
+     */
+    mixins: [
+      ComponentMixin,
+    ],
 
-
+    /**
+     * The computed properties the layout can use.
+     */
     computed: {
       ...mapState('application', {
         application: state => state,
       }),
     },
 
-    mixins: [
-      ComponentMixin,
-    ],
+    /**
+     * The methods which the layout can use.
+     */
+    methods: {
+      /**
+       * Method used to toggle the drawer.
+       */
+      toggleDrawer() {
+        this.$store.dispatch('application/toggleDrawer');
+      },
 
+      /**
+       * Method used to hide the drawer.
+       */
+      hideDrawer() {
+        this.$store.dispatch('application/hideDrawer');
+      },
+    },
+
+    /**
+     * The components shown on the layout page.
+     */
     components: {
       VContent,
       VDrawer,
-      VDrawerHeader,
-      VNavIcon,
-      VDrawerTitle,
-      VDrawerFooter,
       VDrawerBody,
+      VDrawerFooter,
+      VDrawerHeader,
+      VDrawerTitle,
       VHeader,
-      VOverlay,
-      VToolbar,
-      VToolbarTitle,
+      VNavIcon,
       VNavigation,
       VNavigationContent,
       VNavigationLink,
       VNavigationItem,
+      VOverlay,
+      VToolbar,
+      VToolbarTitle,
     },
   };
 </script>

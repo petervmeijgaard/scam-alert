@@ -22,7 +22,7 @@
 
   export default {
     /**
-     * The name of the component
+     * The name of the component.
      */
     name: 'drawer-body',
 

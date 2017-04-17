@@ -19,10 +19,7 @@
 </style>
 
 <template>
-  <div
-    :class="classNames"
-    @click="$bus.$emit('application@toggleDrawer')"
-  >
+  <div :class="classNames">
     <v-icon>
       menu
     </v-icon>
@@ -36,7 +33,7 @@
 
   export default {
     /**
-     * The name of the component
+     * The name of the component.
      */
     name: 'nav-icon',
 

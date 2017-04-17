@@ -1,9 +1,20 @@
+<style lang="stylus">
+  @import '~assets/stylus/imports.styl'
+
+  .table
+    +has('head')
+      font-size: 1rem
+      padding: 1rem
+      text-align: left
+      color: palette('Grey', '600')
+</style>
+
 <template>
-  <thead :class="classNames">
+  <th :class="classNames">
     <slot>
       {{ content }}
     </slot>
-  </thead>
+  </th>
 </template>
 
 <script>
@@ -13,7 +24,7 @@
 
   export default {
     /**
-     * The name of the component
+     * The name of the component.
      */
     name: 'table-head',
 

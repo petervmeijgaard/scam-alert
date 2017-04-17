@@ -20,11 +20,45 @@
     </v-row>
     <v-row>
       <v-col variant="sm">
-        <v-table
-          :headings="table.headings"
-          :empty-message="table.emptyMessage"
-          :content="scammer.all"
-        />
+        <v-table>
+          <v-table-header>
+            <v-table-row>
+              <v-table-head>
+                {{ $t('scammer.full_name') }}
+              </v-table-head>
+              <v-table-head>
+                {{ $t('scammer.first_name') }}
+              </v-table-head>
+              <v-table-head>
+                {{ this.$t('scammer.last_name') }}
+              </v-table-head>
+            </v-table-row>
+          </v-table-header>
+          <v-table-body>
+            <v-table-row
+              v-for="scammer in scammer.all"
+              :key="scammer"
+              variant="body"
+            >
+              <v-table-cell>
+                <router-link :to="scammerUrl(scammer.id)">
+                  {{ scammer.fullName }}
+                </router-link>
+              </v-table-cell>
+              <v-table-cell>
+                {{ scammer.firstName }}
+              </v-table-cell>
+              <v-table-cell>
+                {{ scammer.lastName }}
+              </v-table-cell>
+            </v-table-row>
+            <v-table-row v-if="scammer.all.length === 0">
+              <v-table-cell colspan="3">
+                {{ $t('overall.not_found', [this.$t('scammer.plural')]) }}
+              </v-table-cell>
+            </v-table-row>
+          </v-table-body>
+        </v-table>
       </v-col>
     </v-row>
     <v-row>

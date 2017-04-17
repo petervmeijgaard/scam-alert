@@ -12,10 +12,7 @@
 </style>
 
 <template>
-  <div
-    :class="classNames"
-    @click="$bus.$emit('application@hideDrawer')"
-  ></div>
+  <div :class="classNames"></div>
 </template>
 
 <script>
@@ -24,7 +21,7 @@
 
   export default {
     /**
-     * The name of the component
+     * The name of the component.
      */
     name: 'overlay',
 

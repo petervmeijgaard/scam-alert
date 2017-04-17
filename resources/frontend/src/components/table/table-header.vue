@@ -1,9 +1,9 @@
 <template>
-  <tbody :class="classNames">
+  <thead :class="classNames">
     <slot>
       {{ content }}
     </slot>
-  </tbody>
+  </thead>
 </template>
 
 <script>
@@ -15,12 +15,12 @@
     /**
      * The name of the component.
      */
-    name: 'table-body',
+    name: 'table-header',
 
     /**
      * The element name of the component.
      */
-    element: 'body',
+    element: 'header',
 
     /**
      * The mixins used to extend the component.

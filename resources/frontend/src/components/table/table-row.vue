@@ -5,6 +5,9 @@
     +has('row')
       border-bottom: .0625rem solid palette('Grey', '300')
       +variant('body')
+        transition: background-color $transition_speed ease-in-out
+        &:hover
+          background-color: palette('Grey', '200')
         &:last-child
           border-bottom: none
 </style>
@@ -24,7 +27,7 @@
 
   export default {
     /**
-     * The name of the component
+     * The name of the component.
      */
     name: 'table-row',
 

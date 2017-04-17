@@ -45,17 +45,15 @@
 <script>
   import BlockMixin from 'mixins/block';
   import ComponentMixin from 'mixins/component';
-  import {
-    VSelectIcon,
-    VSelectItem,
-    VSelectLabel,
-    VSelectList,
-    VSelectSelected,
-  } from './index';
+  import VSelectIcon from './select-icon';
+  import VSelectItem from './select-item';
+  import VSelectLabel from './select-label';
+  import VSelectList from './select-list';
+  import VSelectSelected from './select-selected';
 
   export default {
     /**
-     * The name of the component
+     * The name of the component.
      */
     name: 'select',
 

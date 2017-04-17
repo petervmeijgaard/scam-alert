@@ -53,12 +53,12 @@
 <script>
   import BlockMixin from 'mixins/block';
   import ComponentMixin from 'mixins/component';
-  import { VPaginationItem } from './index';
+  import VPaginationItem from './pagination-item';
   import { VIcon } from 'components/icon';
 
   export default {
     /**
-     * The name of the component
+     * The name of the component.
      */
     name: 'pagination',
 

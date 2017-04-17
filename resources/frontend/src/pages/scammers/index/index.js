@@ -5,7 +5,14 @@ import { VLayout } from 'layouts/base';
 import { VGrid } from 'components/grid';
 import { VRow } from 'components/row';
 import { VCol } from 'components/col';
-import { VTable } from 'components/table';
+import {
+  VTable,
+  VTableHead,
+  VTableHeader,
+  VTableRow,
+  VTableBody,
+  VTableCell,
+} from 'components/table';
 import { VPagination } from 'components/pagination';
 import { VCard, VCardBody } from 'components/card';
 import { VForm } from 'components/form';
@@ -37,27 +44,6 @@ export default {
         this.setLimit(limit);
       },
     },
-    table() {
-      return {
-        headings: [{
-          title: this.$t('scammer.full_name'),
-          urlTo: {
-            name: 'scammers.show',
-            params: {
-              scammerId: 'id',
-            },
-          },
-          identifier: 'fullName',
-        }, {
-          title: this.$t('scammer.first_name'),
-          identifier: 'firstName',
-        }, {
-          title: this.$t('scammer.last_name'),
-          identifier: 'lastName',
-        }],
-        emptyMessage: this.$t('overall.not_found', [this.$t('scammer.plural')]),
-      };
-    },
   },
   watch: {
     query(query) {
@@ -70,6 +56,11 @@ export default {
     VCol,
     VLayout,
     VTable,
+    VTableHead,
+    VTableHeader,
+    VTableRow,
+    VTableBody,
+    VTableCell,
     VPagination,
     VCard,
     VCardBody,
@@ -80,6 +71,12 @@ export default {
     VSelect,
   },
   methods: {
+    scammerUrl(id) {
+      return {
+        name: 'scammers.show',
+        params: { 'scammerId': id }
+      };
+    },
     setPage(page) {
       this.$store.dispatch('scammer/all', (proxy) => {
         proxy.setParameter('page', page);
