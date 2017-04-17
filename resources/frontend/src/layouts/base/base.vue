@@ -17,14 +17,16 @@
             </v-drawer-title>
           </v-drawer-header>
           <v-drawer-body>
-            <v-navigation :routes="routes">
-              <v-navigation-item
-                v-for="route in routes"
-                :key="route"
-              >
-                <v-navigation-link :route="route.to">
+            <v-navigation>
+              <v-navigation-item>
+                <v-navigation-link :route="{ name: 'home.index' }">
                   <v-navigation-content>
-                    {{ route.content }}
+                    Home
+                  </v-navigation-content>
+                </v-navigation-link>
+                <v-navigation-link :route="{ name: 'scammers.index' }">
+                  <v-navigation-content>
+                    Scammers
                   </v-navigation-content>
                 </v-navigation-link>
               </v-navigation-item>
@@ -77,42 +79,49 @@
   import ComponentMixin from 'mixins/component';
 
   export default {
+    /**
+     * The name of the layout.
+     */
     name: 'base-layout',
 
-    data() {
-      return {
-        routes: [
-          {
-            to: { name: 'home.index' },
-            content: 'Home',
-          },
-          {
-            to: { name: 'scammers.index' },
-            content: 'Scammers',
-          },
-        ],
-      };
-    },
+    /**
+     * The mixins used to extend the layout.
+     */
+    mixins: [
+      ComponentMixin,
+    ],
 
+    /**
+     * The computed properties the layout can use.
+     */
     computed: {
       ...mapState('application', {
         application: state => state,
       }),
     },
 
+    /**
+     * The methods which the layout can use.
+     */
     methods: {
+      /**
+       * Method used to toggle the drawer.
+       */
       toggleDrawer() {
         this.$store.dispatch('application/toggleDrawer');
       },
+
+      /**
+       * Method used to hide the drawer.
+       */
       hideDrawer() {
         this.$store.dispatch('application/hideDrawer');
       },
     },
 
-    mixins: [
-      ComponentMixin,
-    ],
-
+    /**
+     * The components shown on the layout page.
+     */
     components: {
       VContent,
       VDrawer,
