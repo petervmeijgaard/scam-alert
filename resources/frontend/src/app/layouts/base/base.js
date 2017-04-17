@@ -11,7 +11,12 @@ import * as VNavIcon from './../../components/nav-icon/nav-icon.vue';
 import { VHeader } from './../../components/header';
 import { VOverlay } from './../../components/overlay';
 import { VToolbar, VToolbarTitle } from './../../components/toolbar';
-import { VNavigation, VNavigationContent, VNavigationItem, VNavigationLink } from './../../components/navigation';
+import {
+  VNavigation,
+  VNavigationContent,
+  VNavigationItem,
+  VNavigationLink
+} from './../../components/navigation';
 import ComponentMixin from './../../mixins/component';
 
 export default {

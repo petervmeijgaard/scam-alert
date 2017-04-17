@@ -10,7 +10,7 @@ import Transformer from './../../../transformers/ScammerTransformer';
 import * as VLayout from './../../../layouts/base/base.vue';
 import { VCard, VCardBody } from './../../../components/card';
 import { VGrid } from './../../../components/grid';
-import * as VRow from './../../../components/row/row.vue';
+import { VRow } from './../../../components/row';
 import { VCol } from './../../../components/col';
 
 const proxy = new Proxy();

@@ -2,7 +2,7 @@ import { mapState } from 'vuex';
 import * as _ from 'lodash';
 
 import { VGrid } from './../../../components/grid';
-import * as VRow from './../../../components/row/row.vue';
+import { VRow } from './../../../components/row';
 import { VCol } from './../../../components/col';
 import * as VLayout from './../../../layouts/base/base.vue';
 import * as VTable from './../../../components/table/table.vue';
@@ -11,7 +11,7 @@ import { VCard, VCardBody } from './../../../components/card';
 import { VForm } from './../../../components/form';
 import { VTextField } from './../../../components/text-field';
 import { VInputGroup } from './../../../components/input-group';
-import { VIcon }from './../../../components/icon';
+import { VIcon } from './../../../components/icon';
 import * as VSelect from './../../../components/select/select.vue';
 
 export default {
