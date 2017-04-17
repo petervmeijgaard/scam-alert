@@ -1,0 +1,52 @@
+<v-layout>
+  <v-grid variant="container">
+    <v-row>
+      <v-col :variants="['md-4', 'lg-3']">
+        <v-card>
+          <v-card-body>
+            <v-form :action="setQuery">
+              <v-input-group>
+                <v-icon variant="signifier">search</v-icon>
+                <v-text-field
+                  variant="with-signifier"
+                  v-model="query"
+                  :placeholder="$t('overall.search', [ $t('scammer.plural') ])"
+                />
+              </v-input-group>
+            </v-form>
+          </v-card-body>
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col variant="sm">
+        <v-table
+          :headings="table.headings"
+          :empty-message="table.emptyMessage"
+          :content="scammer.all"
+        />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col variant="xs-justify">
+        <v-card variant="inline">
+          <v-card-body>
+            <v-pagination
+              :pagination="scammer.pagination"
+              :switch-page-function="setPage"
+              variant="small"
+            />
+          </v-card-body>
+        </v-card>
+        <v-card variant="inline">
+          <v-card-body>
+            <v-select
+              v-model="limit"
+              :items="pageNumbers"
+            ></v-select>
+          </v-card-body>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-grid>
+</v-layout>
