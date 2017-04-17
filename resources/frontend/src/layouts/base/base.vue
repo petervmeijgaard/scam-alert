@@ -2,7 +2,7 @@
   <div>
     <v-header>
       <v-toolbar>
-        <v-nav-icon />
+        <v-nav-icon @click="toggleDrawer"/>
         <v-toolbar-title>
           Scam alert
         </v-toolbar-title>
@@ -11,7 +11,7 @@
       <transition name="slide-left">
         <v-drawer v-if="application.drawerActive">
           <v-drawer-header>
-            <v-nav-icon variant="green" />
+            <v-nav-icon variant="green" @click="toggleDrawer"/>
             <v-drawer-title>
               Scam alert
             </v-drawer-title>
@@ -45,7 +45,10 @@
     </v-content>
 
     <transition name="fade">
-      <v-overlay v-show="application.drawerActive"/>
+      <v-overlay
+        v-show="application.drawerActive"
+        @click="hideDrawer"
+      />
     </transition>
 
   </div>
@@ -91,11 +94,19 @@
       };
     },
 
-
     computed: {
       ...mapState('application', {
         application: state => state,
       }),
+    },
+
+    methods: {
+      toggleDrawer() {
+        this.$store.dispatch('application/toggleDrawer');
+      },
+      hideDrawer() {
+        this.$store.dispatch('application/hideDrawer');
+      },
     },
 
     mixins: [

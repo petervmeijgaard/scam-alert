@@ -14,7 +14,7 @@
 <template>
   <div
     :class="classNames"
-    @click="$bus.$emit('application@hideDrawer')"
+    @click.prevent="$emit('click')"
   ></div>
 </template>
 

@@ -21,7 +21,7 @@
 <template>
   <div
     :class="classNames"
-    @click="$bus.$emit('application@toggleDrawer')"
+    @click.prevent="$emit('click')"
   >
     <v-icon>
       menu
