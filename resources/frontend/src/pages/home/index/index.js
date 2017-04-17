@@ -5,7 +5,7 @@
  * The home index page.
  */
 
-import * as VLayout from 'layouts/base/base.vue';
+import { VLayout } from 'layouts/base';
 import { VCard, VCardBody } from 'components/card';
 import { VGrid } from 'components/grid';
 import { VRow } from 'components/row';
