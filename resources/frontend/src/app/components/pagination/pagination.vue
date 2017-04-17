@@ -1,5 +1,5 @@
 <style lang="stylus">
-  @import './../../../assets/stylus/imports.styl'
+  @import '~assets/stylus/imports.styl'
 
   .pagination
     align-items: center
@@ -51,10 +51,10 @@
 </template>
 
 <script>
-  import BlockMixin from './../../mixins/block';
-  import ComponentMixin from './../../mixins/component';
+  import BlockMixin from 'mixins/block';
+  import ComponentMixin from 'mixins/component';
   import { VPaginationItem } from './index';
-  import { VIcon } from './../icon';
+  import { VIcon } from 'components/icon';
 
   export default {
     /**

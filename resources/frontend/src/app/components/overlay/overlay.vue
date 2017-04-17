@@ -1,5 +1,5 @@
 <style lang="stylus">
-  @import './../../../assets/stylus/imports.styl'
+  @import '~assets/stylus/imports.styl'
 
   .overlay
     background-color: rgba(0, 0, 0, 0.5)
@@ -19,8 +19,8 @@
 </template>
 
 <script>
-  import BlockMixin from './../../mixins/block';
-  import ComponentMixin from './../../mixins/component';
+  import BlockMixin from 'mixins/block';
+  import ComponentMixin from 'mixins/component';
 
   export default {
     /**

@@ -1,5 +1,5 @@
 <style lang="stylus">
-  @import '../../../assets/stylus/imports.styl'
+  @import '~assets/stylus/imports.styl'
 
   .navigation
     +has('link')
@@ -29,10 +29,10 @@
 </template>
 
 <script>
-  import ComponentMixin from './../../mixins/component';
-  import ElementMixin from './../../mixins/element';
-  import SlotMixin from './../../mixins/slot';
-  import CSSUtil from './../../utils/css';
+  import ComponentMixin from 'mixins/component';
+  import ElementMixin from 'mixins/element';
+  import SlotMixin from 'mixins/slot';
+  import CSSUtil from 'utils/css';
 
   export default {
     /**

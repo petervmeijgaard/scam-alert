@@ -1,5 +1,5 @@
 <style lang="stylus">
-  @import '../../../assets/stylus/imports.styl'
+  @import '~assets/stylus/imports.styl'
 
   .select
     +has('label')
@@ -21,9 +21,9 @@
 </template>
 
 <script>
-  import ComponentMixin from '../../mixins/component';
-  import ElementMixin from '../../mixins/element';
-  import SlotMixin from '../../mixins/slot';
+  import ComponentMixin from 'mixins/component';
+  import ElementMixin from 'mixins/element';
+  import SlotMixin from 'mixins/slot';
 
   export default {
     /**
