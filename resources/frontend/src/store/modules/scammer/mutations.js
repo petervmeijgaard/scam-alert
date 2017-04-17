@@ -5,7 +5,7 @@
  * The mutations available for the scammer module.
  */
 
-import store from './../../index';
+import store from 'store';
 import {
   ALL,
   CREATED,

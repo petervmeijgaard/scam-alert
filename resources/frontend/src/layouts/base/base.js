@@ -1,23 +1,23 @@
 import { mapState } from 'vuex';
-import { VContent } from './../../components/content';
+import { VContent } from 'components/content';
 import {
   VDrawer,
   VDrawerBody,
   VDrawerHeader,
   VDrawerTitle,
   VDrawerFooter
-} from './../../components/drawer';
-import { VNavIcon } from './../../components/nav-icon';
-import { VHeader } from './../../components/header';
-import { VOverlay } from './../../components/overlay';
-import { VToolbar, VToolbarTitle } from './../../components/toolbar';
+} from 'components/drawer';
+import { VNavIcon } from 'components/nav-icon';
+import { VHeader } from 'components/header';
+import { VOverlay } from 'components/overlay';
+import { VToolbar, VToolbarTitle } from 'components/toolbar';
 import {
   VNavigation,
   VNavigationContent,
   VNavigationItem,
   VNavigationLink
-} from './../../components/navigation';
-import ComponentMixin from './../../mixins/component';
+} from 'components/navigation';
+import ComponentMixin from 'mixins/component';
 
 export default {
   name: 'base-layout',

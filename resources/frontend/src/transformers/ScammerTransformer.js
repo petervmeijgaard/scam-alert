@@ -6,7 +6,7 @@
  */
 
 import Transformer from './BaseTransformer';
-import Scammer from './../models/Scammer';
+import Scammer from 'models/Scammer';
 
 class ScammerTransformer extends Transformer {
   /**

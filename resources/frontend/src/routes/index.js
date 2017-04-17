@@ -15,20 +15,20 @@ export default [
   {
     path: '/home',
     name: 'home.index',
-    component: resolve => require(['./pages/home/index/index.vue'], resolve),
+    component: resolve => require(['pages/home/index/index.vue'], resolve),
   },
 
   // Scammers
   {
     path: '/scammers',
     name: 'scammers.index',
-    component: resolve => require(['./pages/scammers/index/index.vue'], resolve),
+    component: resolve => require(['pages/scammers/index/index.vue'], resolve),
   },
 
   {
     path: '/scammers/:scammerId',
     name: 'scammers.show',
-    component: resolve => require(['./pages/scammers/show/show.vue'], resolve),
+    component: resolve => require(['pages/scammers/show/show.vue'], resolve),
     props: true,
   },
 
@@ -36,7 +36,7 @@ export default [
   {
     path: '/404',
     name: 'not-found.index',
-    component: resolve => require(['./pages/not-found/index/index.vue'], resolve),
+    component: resolve => require(['pages/not-found/index/index.vue'], resolve),
   },
 
   // Redirects

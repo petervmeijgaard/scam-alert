@@ -6,7 +6,7 @@
  */
 
 import Transformer from './BaseTransformer';
-import Pagination from './../models/Pagination';
+import Pagination from 'models/Pagination';
 
 class PaginationTransformer extends Transformer {
   /**
