@@ -446,14 +446,13 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-loader@^6.2.10:
-  version "6.4.1"
-  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-6.4.1.tgz#0b34112d5b0748a8dcdbf51acf6f9bd42d50b8ca"
+babel-loader@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-7.0.0.tgz#2e43a66bee1fff4470533d0402c8a4532fafbaf7"
   dependencies:
     find-cache-dir "^0.1.1"
-    loader-utils "^0.2.16"
+    loader-utils "^1.0.2"
     mkdirp "^0.5.1"
-    object-assign "^4.0.1"
 
 babel-messages@^6.23.0:
   version "6.23.0"
@@ -3485,9 +3484,9 @@ karma-sourcemap-loader@^0.3.7:
   dependencies:
     graceful-fs "^4.1.2"
 
-karma-spec-reporter@0.0.30:
-  version "0.0.30"
-  resolved "https://registry.yarnpkg.com/karma-spec-reporter/-/karma-spec-reporter-0.0.30.tgz#d10b5c8bb441cb1c6adf56785f89d395f2e9093a"
+karma-spec-reporter@^0.0.31:
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/karma-spec-reporter/-/karma-spec-reporter-0.0.31.tgz#4830dc7148a155c7d7a186e632339a0d80fadec3"
   dependencies:
     colors "^1.1.2"
 
@@ -6077,9 +6076,16 @@ vue-router@^2.3.1:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-2.4.0.tgz#56a635e1434a1966ac095f2a485bebdcfc36cec5"
 
-vue-style-loader@^2.0.0, vue-style-loader@^2.0.5:
+vue-style-loader@^2.0.0:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-2.0.5.tgz#f0efac992febe3f12e493e334edb13cd235a3d22"
+  dependencies:
+    hash-sum "^1.0.2"
+    loader-utils "^1.0.2"
+
+vue-style-loader@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-3.0.0.tgz#edeaee3b529d5796ef0b01bb7142a8a7e0025353"
   dependencies:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
