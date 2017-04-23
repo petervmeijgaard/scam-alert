@@ -1,5 +1,5 @@
 <style lang="stylus">
-  @import '~assets/stylus/imports.styl'
+  @import '~@/assets/stylus/imports.styl'
 
   .select
     +has('icon')
@@ -17,10 +17,10 @@
 </template>
 
 <script>
-  import ComponentMixin from 'mixins/component';
-  import ElementMixin from 'mixins/element';
-  import SlotMixin from 'mixins/slot';
-  import { VIcon } from 'components/icon/index';
+  import ComponentMixin from '@/mixins/component';
+  import ElementMixin from '@/mixins/element';
+  import SlotMixin from '@/mixins/slot';
+  import { VIcon } from '@/components/icon/index';
 
   export default {
     /**

@@ -1,5 +1,5 @@
 <style lang="stylus">
-  @import '~assets/stylus/imports.styl'
+  @import '~@/assets/stylus/imports.styl'
 
   .table
     background-color: palette('White')
@@ -15,9 +15,9 @@
 </template>
 
 <script>
-  import BlockMixin from 'mixins/block';
-  import ComponentMixin from 'mixins/component';
-  import SlotMixin from 'mixins/slot';
+  import BlockMixin from '@/mixins/block';
+  import ComponentMixin from '@/mixins/component';
+  import SlotMixin from '@/mixins/slot';
 
   export default {
     /**

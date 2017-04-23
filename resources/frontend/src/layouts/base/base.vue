@@ -58,25 +58,25 @@
 
 <script>
   import { mapState } from 'vuex';
-  import ComponentMixin from 'mixins/component';
-  import { VContent } from 'components/content';
+  import ComponentMixin from '@/mixins/component';
+  import { VContent } from '@/components/content';
   import {
     VDrawer,
     VDrawerBody,
     VDrawerFooter,
     VDrawerHeader,
     VDrawerTitle,
-  } from 'components/drawer';
-  import { VHeader } from 'components/header';
-  import { VNavIcon } from 'components/nav-icon';
+  } from '@/components/drawer';
+  import { VHeader } from '@/components/header';
+  import { VNavIcon } from '@/components/nav-icon';
   import {
     VNavigation,
     VNavigationContent,
     VNavigationItem,
     VNavigationLink,
-  } from 'components/navigation';
-  import { VOverlay } from 'components/overlay';
-  import { VToolbar, VToolbarTitle } from 'components/toolbar';
+  } from '@/components/navigation';
+  import { VOverlay } from '@/components/overlay';
+  import { VToolbar, VToolbarTitle } from '@/components/toolbar';
 
   export default {
     /**

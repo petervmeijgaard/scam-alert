@@ -1,5 +1,5 @@
 <style lang="stylus">
-  @import '~assets/stylus/imports.styl'
+  @import '~@/assets/stylus/imports.styl'
 
   .select
     +has('item')
@@ -28,10 +28,10 @@
 </template>
 
 <script>
-  import CSSUtil from 'utils/css';
-  import ComponentMixin from 'mixins/component';
-  import ElementMixin from 'mixins/element';
-  import SlotMixin from 'mixins/slot';
+  import CSSUtil from '@/utils/css';
+  import ComponentMixin from '@/mixins/component';
+  import ElementMixin from '@/mixins/element';
+  import SlotMixin from '@/mixins/slot';
 
   export default {
     /**

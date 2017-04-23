@@ -83,7 +83,7 @@ Object.defineProperty(Vue.prototype, '$echo', {
  * https://github.com/vuejs/vuex-router-sync/blob/master/README.md
  */
 import VuexRouterSync from 'vuex-router-sync';
-import store from 'store';
+import store from '@/store';
 
 
 /* ============
@@ -96,7 +96,7 @@ import store from 'store';
  * http://router.vuejs.org/en/index.html
  */
 import VueRouter from 'vue-router';
-import routes from 'routes';
+import routes from '@/routes';
 
 Vue.use(VueRouter);
 
@@ -124,7 +124,7 @@ Vue.router = router;
  * https://kazupon.github.io/vue-i18n/
  */
 import VueI18n from 'vue-i18n';
-import messages from 'locale';
+import messages from '@/locale';
 
 Vue.use(VueI18n);
 

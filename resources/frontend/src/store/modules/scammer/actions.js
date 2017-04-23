@@ -6,9 +6,9 @@
  */
 
 import * as types from './mutation-types';
-import Proxy from 'proxies/ScammerProxy';
-import Transformer from 'transformers/ScammerTransformer';
-import PaginationTransformer from 'transformers/PaginationTransformer';
+import Proxy from '@/proxies/ScammerProxy';
+import Transformer from '@/transformers/ScammerTransformer';
+import PaginationTransformer from '@/transformers/PaginationTransformer';
 
 const proxy = new Proxy();
 

@@ -12,9 +12,9 @@
 </template>
 
 <script>
-  import ComponentMixin from 'mixins/component';
-  import BlockMixin from 'mixins/block';
-  import SlotMixin from 'mixins/slot';
+  import ComponentMixin from '@/mixins/component';
+  import BlockMixin from '@/mixins/block';
+  import SlotMixin from '@/mixins/slot';
 
   export default {
     /**

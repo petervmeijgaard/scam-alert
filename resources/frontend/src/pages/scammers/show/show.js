@@ -5,13 +5,13 @@
  * The home index page.
  */
 
-import Proxy from 'proxies/ScammerProxy';
-import Transformer from 'transformers/ScammerTransformer';
-import { VLayout } from 'layouts/base';
-import { VCard, VCardBody } from 'components/card';
-import { VGrid } from 'components/grid';
-import { VRow } from 'components/row';
-import { VCol } from 'components/col';
+import Proxy from '@/proxies/ScammerProxy';
+import Transformer from '@/transformers/ScammerTransformer';
+import { VLayout } from '@/layouts/base';
+import { VCard, VCardBody } from '@/components/card';
+import { VGrid } from '@/components/grid';
+import { VRow } from '@/components/row';
+import { VCol } from '@/components/col';
 
 const proxy = new Proxy();
 

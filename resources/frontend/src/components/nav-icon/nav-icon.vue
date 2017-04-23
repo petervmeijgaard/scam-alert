@@ -1,5 +1,5 @@
 <style lang="stylus">
-  @import '~assets/stylus/imports.styl'
+  @import '~@/assets/stylus/imports.styl'
 
   .nav-icon
     border-radius: 100%
@@ -27,9 +27,9 @@
 </template>
 
 <script>
-  import BlockMixin from 'mixins/block';
-  import ComponentMixin from 'mixins/component';
-  import { VIcon } from 'components/icon';
+  import BlockMixin from '@/mixins/block';
+  import ComponentMixin from '@/mixins/component';
+  import { VIcon } from '@/components/icon';
 
   export default {
     /**
